@@ -1,4 +1,4 @@
-<img src="app/icon.svg" alt="DesignMind AI logo" width="64" height="64">
+<p align="center"><img src="public/logo.jpg" alt="DesignMind AI logo" width="360"></p>
 
 # DesignMind AI
 
