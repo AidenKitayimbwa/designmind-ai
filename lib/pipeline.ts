@@ -15,7 +15,7 @@ class StepError extends Error {}
 
 async function callAgent(review: Review, step: StepId, body: object): Promise<{ output: unknown; keySource: "outskill" | "user" }> {
   if (review.keyMode === "byok" && !getKeySettings().key) {
-    throw new StepError("This review uses your own key, but it isn't in this tab. Start a new review and enter your key again, or choose the Outskill key.");
+    throw new StepError("This review uses your own key, but it isn't in this tab. Start a new review and enter your key again, or choose the default key.");
   }
   const json = JSON.stringify({ model: review.model, ...body });
   if (json.length > MAX_BODY) throw new StepError("The screenshots are too large to send (over 4 MB). Use smaller images.");

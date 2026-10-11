@@ -19,9 +19,6 @@ export const STEPS: { id: StepId; name: string; description: string; parallel: b
 export const STEP_NAME: Record<StepId, string> = Object.fromEntries(STEPS.map((s) => [s.id, s.name])) as Record<StepId, string>;
 
 export const DEFAULT_MODEL = "google/gemini-3.8-flash";
-// OpenRouter model IDs look like vendor/model, e.g. google/gemini-3.8-flash (an optional :variant is allowed).
-export const isValidModelId = (id: string) => /^[a-z0-9][\w.-]*\/[\w.-]+(:[\w.-]+)?$/i.test(id);
-
 export const MODEL_PRESETS = [
   { id: "google/gemini-3.8-flash", label: "google/gemini-3.8-flash (default)" },
   { id: "anthropic/claude-haiku-5.5", label: "anthropic/claude-haiku-5.5" },

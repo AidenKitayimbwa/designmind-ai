@@ -55,7 +55,7 @@ export default function ReviewPage() {
           </p>
         </div>
         <dl className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
-          <div><dt className="inline text-muted">Key in use: </dt><dd className="inline font-semibold" data-testid="key-in-use">{usedKey === "user" ? "Your key" : "Outskill key"}</dd></div>
+          <div><dt className="inline text-muted">Key in use: </dt><dd className="inline font-semibold" data-testid="key-in-use">{usedKey === "user" ? "Your key" : "Default key"}</dd></div>
           <div><dt className="inline text-muted">Model: </dt><dd className="inline break-all font-semibold">{review.model}</dd></div>
         </dl>
       </header>

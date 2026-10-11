@@ -12,7 +12,8 @@ async function expectNoHorizontalScroll(page: Page) {
 
 test("home page: upload zone, key choice and Continue work", async ({ page }, info) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Find what to fix in your design, in about a minute" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "From Design to Insight in a few Minutes." })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Quick Walk-through" }).first()).toHaveAttribute("href", "/examples/example-compare");
   await expect(page.getByRole("heading", { name: "Who reviews your design" })).toBeVisible();
 
   // Upload zone and Choose files
@@ -23,21 +24,18 @@ test("home page: upload zone, key choice and Continue work", async ({ page }, in
   await (await chooser).setFiles("public/examples/landing.jpg");
   await expect(page.getByAltText("Screen A thumbnail")).toBeVisible();
 
-  // Key choice: Outskill key is the default, BYOK shows the key field
-  const outskill = page.getByRole("radio", { name: /Outskill key/ });
+  // Key choice: the default key is selected, BYOK shows the key field
+  const outskill = page.getByRole("radio", { name: /Default key/ });
   await expect(outskill).toBeChecked();
   await page.getByRole("radio", { name: /Bring your own key/ }).check();
   await expect(page.getByLabel("OpenRouter API key")).toBeVisible();
   await expect(page.getByRole("button", { name: "Continue" })).toBeDisabled();
   await outskill.check();
 
-  // An invalid Custom model ID (e.g. "Test1") blocks Continue until it's fixed or cleared
+  // Advanced offers the model presets only (no custom model ID)
   await page.getByText("Advanced").click();
-  const custom = page.getByLabel("Custom model ID");
-  await custom.fill("Test1");
-  await expect(page.getByText(/Use a full OpenRouter model ID/)).toBeVisible();
-  await expect(page.getByRole("button", { name: "Continue" })).toBeDisabled();
-  await custom.fill("");
+  await expect(page.getByLabel("Model")).toBeVisible();
+  await expect(page.getByLabel("Custom model ID")).toHaveCount(0);
 
   // Continue is enabled once an image is added (trial click: don't start a real review)
   const cont = page.getByRole("button", { name: "Continue" });

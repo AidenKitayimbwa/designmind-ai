@@ -6,7 +6,7 @@ import TourVideo from "@/components/TourVideo";
 import type { Review } from "@/lib/steps";
 import sample from "@/tests/fixtures/sample-result.json";
 
-export const metadata: Metadata = { title: "Example review | DesignMind AI" };
+export const metadata: Metadata = { title: "Quick Walk-through | DesignMind AI" };
 
 // A finished review built from the saved sample result. No API calls and no key.
 export default function ExamplePage() {
@@ -18,8 +18,8 @@ export default function ExamplePage() {
       </p>
       <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Example review</h1>
-          <p className="mt-2 text-muted">{review.context.product}{review.context.audience ? `, for ${review.context.audience}` : ""}.</p>
+          <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Quick Walk-through</h1>
+          <p className="mt-2 text-muted">A finished example review of {review.context.product}{review.context.audience ? `, for ${review.context.audience}` : ""}.</p>
         </div>
         <dl className="text-sm"><dt className="inline text-muted">Model: </dt><dd className="inline font-semibold">{review.model}</dd></dl>
       </header>

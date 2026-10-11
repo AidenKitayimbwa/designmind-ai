@@ -30,7 +30,7 @@ flowchart LR
 | 6. Design comparison | Picks the stronger screen in each area |
 | 7. Lead reviewer | Removes repeats, ranks the fixes and scores each screen |
 
-Steps 2–6 run at the same time. Results show as numbered pins on your screenshots plus 7 tabs, and you can export a PDF or JSON. The **See an example** page has a finished review and a short product tour video.
+Steps 2–6 run at the same time. Results show as numbered pins on your screenshots plus 7 tabs, and you can export a PDF or JSON. The **Quick Walk-through** page has a finished example review and a short product tour video.
 
 ## Run it locally
 
@@ -46,10 +46,10 @@ npm run dev                  # open http://localhost:3000
 
 The app uses one OpenRouter key, in one of two ways:
 
-- **Outskill key (default):** the server reads `OUTSKILL_OPENROUTER_API_KEY`. Visitors don't need to set anything up.
+- **Default key:** the server reads `OUTSKILL_OPENROUTER_API_KEY`. Visitors don't need to set anything up.
 - **Bring your own key:** a visitor pastes their own OpenRouter key on the home page. It's kept only in that browser tab and is never stored or logged.
 
-A bring-your-own-key request never falls back to the Outskill key. Set a credit limit on the Outskill key in OpenRouter, because anyone with the site URL can use it.
+A bring-your-own-key request never falls back to the default key. Set a credit limit on the default key in OpenRouter, because anyone with the site URL can use it.
 
 ## Deploy to Vercel
 
@@ -64,7 +64,7 @@ npx playwright install chromium   # first time only
 npm run test:responsive           # checks mobile, laptop and desktop layouts
 ```
 
-To see a finished review without a key, open **See an example** in the app.
+To see a finished review without a key, open **Quick Walk-through** in the app.
 
 ## Limitations
 
