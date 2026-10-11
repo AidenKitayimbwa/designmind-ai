@@ -51,7 +51,7 @@ export default function ReviewPage() {
         <div>
           <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Reviewing your design</h1>
           <p className="mt-2 text-muted">
-            {finished ? "All steps have run. Your results are below." : "This usually takes 30 to 90 seconds. You can keep this page open or reload it."}
+            {finished ? "All steps have run. Your results are below." : "This usually takes 2 to 3 minutes. You can keep this page open or reload it."}
           </p>
         </div>
         <dl className="flex flex-wrap gap-x-5 gap-y-1 text-sm">

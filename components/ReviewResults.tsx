@@ -43,12 +43,12 @@ export default function ReviewResults({ review }: { review: Review }) {
 
       <ResultsTabs review={review} />
 
-      <div className="flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:flex-wrap sm:items-center">
-        <button type="button" onClick={onPdf} disabled={exporting} className="min-h-11 rounded-md bg-ink px-5 font-semibold text-white disabled:opacity-60">
+      <div className="flex flex-wrap items-center gap-3 border-t border-line pt-6">
+        <button type="button" onClick={onPdf} disabled={exporting} className="min-h-11 rounded-md bg-ink px-5 font-semibold text-white transition-transform enabled:active:scale-[0.97] disabled:opacity-60">
           {exporting ? "Building PDF…" : "Export PDF"}
         </button>
-        <button type="button" onClick={onJson} className="min-h-11 rounded-md border border-ink px-5 font-semibold">Download JSON</button>
-        <Link href="/" className="flex min-h-11 items-center justify-center rounded-md px-3 font-semibold underline decoration-pen decoration-2 underline-offset-4 sm:ml-auto">
+        <button type="button" onClick={onJson} className="min-h-11 rounded-md border border-ink px-5 font-semibold transition-transform active:scale-[0.97]">Download JSON</button>
+        <Link href="/" className="flex min-h-11 basis-full items-center font-semibold underline decoration-pen decoration-2 underline-offset-4 sm:ml-auto sm:basis-auto sm:justify-center sm:px-3">
           Start a new review
         </Link>
       </div>

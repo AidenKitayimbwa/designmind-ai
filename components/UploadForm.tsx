@@ -97,7 +97,7 @@ export default function UploadForm() {
   const field = "mt-1 min-h-11 w-full rounded-md border border-line bg-surface px-3";
 
   return (
-    <form onSubmit={onContinue} className="space-y-6 rounded-xl border border-line bg-surface p-5 sm:p-6" aria-label="Upload your design">
+    <form onSubmit={onContinue} className="space-y-6 rounded-xl border border-line bg-surface p-4 sm:p-6" aria-label="Upload your design">
       <div
         data-testid="upload-zone"
         onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
@@ -105,7 +105,11 @@ export default function UploadForm() {
         onDrop={(e) => { e.preventDefault(); setDragging(false); addFiles(e.dataTransfer.files); }}
         className={`flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed px-4 py-8 text-center ${dragging ? "border-pen bg-pen-soft" : "border-line bg-paper"}`}
       >
-        <p className="font-display text-xl font-bold">Drop your screenshots here</p>
+        {/* Phones can't drag and drop, so touch screens get wording that fits a tap. */}
+        <p className="font-display text-xl font-bold">
+          <span className="pointer-coarse:hidden">Drop your screenshots here</span>
+          <span className="hidden pointer-coarse:inline">Add your screenshots</span>
+        </p>
         <p className="text-sm text-muted">Up to 3 images (PNG, JPG or WebP)</p>
         <button type="button" onClick={() => inputRef.current?.click()} disabled={images.length >= 3 || busy} className="min-h-11 rounded-md border border-ink bg-surface px-5 font-semibold disabled:opacity-50">
           Choose files
@@ -127,7 +131,7 @@ export default function UploadForm() {
                   id={`label-${img.id}`}
                   value={img.label}
                   onChange={(e) => setImages((prev) => prev.map((p) => (p.id === img.id ? { ...p, label: e.target.value } : p)))}
-                  className="min-h-11 min-w-0 flex-1 rounded-md border border-line px-2 text-sm"
+                  className="min-h-11 min-w-0 flex-1 rounded-md border border-line px-2 text-base sm:text-sm"
                 />
                 <button type="button" onClick={() => setImages((prev) => prev.filter((p) => p.id !== img.id))} className="min-h-11 rounded-md px-3 text-sm font-semibold text-fail hover:bg-fail-soft" aria-label={`Remove ${img.label}`}>
                   Remove
@@ -163,7 +167,7 @@ export default function UploadForm() {
         onModelChange={(m) => { setModel(m); setSavedModel(m); }}
       />
 
-      <div className="flex flex-col gap-2 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between">
         <p id="continue-hint" className="text-sm text-muted" aria-live="polite">
           {images.length === 0
             ? "Add at least one screenshot to continue."
@@ -171,7 +175,7 @@ export default function UploadForm() {
               ? "Enter your OpenRouter key, or switch back to the default key."
               : `Model: ${effectiveModel}`}
         </p>
-        <button type="submit" disabled={!canContinue} aria-describedby="continue-hint" className="min-h-12 rounded-full bg-ink px-8 font-display text-lg font-bold text-paper disabled:cursor-not-allowed disabled:bg-muted/60">
+        <button type="submit" disabled={!canContinue} aria-describedby="continue-hint" className="min-h-12 self-start rounded-full bg-ink px-8 font-display text-lg font-bold text-paper transition-transform enabled:active:scale-[0.97] disabled:cursor-not-allowed disabled:bg-muted/60 sm:self-auto">
           {busy && images.length > 0 ? "Preparing…" : "Continue"}
         </button>
       </div>

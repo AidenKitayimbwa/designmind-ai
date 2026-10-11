@@ -108,16 +108,13 @@ export default function ResultsTabs({ review }: { review: Review }) {
 
   return (
     <section aria-label="Results" className="space-y-4">
-      <div className="sm:hidden">
-        <label htmlFor="results-tab" className="text-sm font-bold">Results section</label>
-        <select id="results-tab" data-testid="tab-select" value={tab} onChange={(e) => setTab(e.target.value as Tab)} className="mt-1 min-h-11 w-full rounded-md border border-line bg-surface px-3 font-semibold">
-          {TABS.map((t) => <option key={t}>{t}</option>)}
-        </select>
-      </div>
-      <div role="tablist" aria-label="Results" className="hidden flex-wrap gap-1 border-b border-line sm:flex">
+      {/* On phones the tabs form one row you swipe sideways; from the sm breakpoint they wrap. */}
+      <div role="tablist" aria-label="Results" data-testid="tablist"
+        className="-mx-4 flex snap-x scroll-px-4 gap-1 overflow-x-auto border-b border-line px-4 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden">
         {TABS.map((t) => (
-          <button key={t} role="tab" type="button" aria-selected={tab === t} aria-controls="tab-panel" onClick={() => setTab(t)}
-            className={`min-h-11 rounded-t-md border-b-2 px-3 font-semibold ${tab === t ? "border-pen text-ink" : "border-transparent text-muted hover:text-ink"}`}>
+          <button key={t} role="tab" type="button" aria-selected={tab === t} aria-controls="tab-panel"
+            onClick={(e) => { setTab(t); e.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" }); }}
+            className={`min-h-11 shrink-0 snap-start whitespace-nowrap rounded-t-md border-b-2 px-3 font-semibold ${tab === t ? "border-pen text-ink" : "border-transparent text-muted hover:text-ink"}`}>
             {t}
           </button>
         ))}
@@ -136,7 +133,7 @@ export default function ResultsTabs({ review }: { review: Review }) {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {o.lead.scores.map((s) => (
                 <div key={s.screenRef} className={card}>
-                  <div className="flex items-baseline justify-between">
+                  <div className="flex items-baseline justify-between gap-3">
                     <h3 className={h3}>{review.images.find((i) => i.id === s.screenRef)?.label ?? `Screen ${s.screenRef}`}</h3>
                     <span className="font-display text-3xl font-extrabold tabular-nums">{s.overall}</span>
                   </div>

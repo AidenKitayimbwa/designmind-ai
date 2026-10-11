@@ -62,17 +62,17 @@ export default function KeyOptions(p: Props) {
                 value={p.apiKey}
                 onChange={(e) => { p.onKeyChange(e.target.value.trim()); setTest(null); }}
                 placeholder="Paste your OpenRouter key"
-                className="min-h-11 w-full min-w-0 rounded-l-md border border-line bg-surface px-3 font-mono text-sm"
+                className="min-h-11 w-full min-w-0 rounded-l-md border border-line bg-surface px-3 font-mono text-base sm:text-sm"
               />
               <button type="button" onClick={() => setShow(!show)} aria-pressed={show} className="min-h-11 rounded-r-md border border-l-0 border-line bg-surface px-3 text-sm font-semibold">
                 {show ? "Hide" : "Show"}
               </button>
             </div>
             <div className="flex gap-2">
-              <button type="button" onClick={testKey} disabled={!p.apiKey || testing} className="min-h-11 flex-1 rounded-md border border-ink px-4 font-semibold disabled:opacity-50 sm:flex-none">
+              <button type="button" onClick={testKey} disabled={!p.apiKey || testing} className="min-h-11 rounded-md border border-ink px-4 font-semibold disabled:opacity-50">
                 {testing ? "Testing…" : "Test key"}
               </button>
-              <button type="button" onClick={() => { p.onKeyChange(""); setTest(null); }} disabled={!p.apiKey} className="min-h-11 flex-1 rounded-md border border-line px-4 font-semibold disabled:opacity-50 sm:flex-none">
+              <button type="button" onClick={() => { p.onKeyChange(""); setTest(null); }} disabled={!p.apiKey} className="min-h-11 rounded-md border border-line px-4 font-semibold disabled:opacity-50">
                 Clear key
               </button>
             </div>
@@ -95,7 +95,7 @@ export default function KeyOptions(p: Props) {
         <div className="mt-3 max-w-md">
           <label className="block">
             <span className="text-sm font-bold">Model</span>
-            <select value={p.model} onChange={(e) => p.onModelChange(e.target.value)} className="mt-1 min-h-11 w-full rounded-md border border-line bg-surface px-2 text-sm">
+            <select value={p.model} onChange={(e) => p.onModelChange(e.target.value)} className="mt-1 min-h-11 w-full rounded-md border border-line bg-surface px-2 text-base sm:text-sm">
               {MODEL_PRESETS.map((m) => <option key={m.id} value={m.id}>{m.label}</option>)}
             </select>
           </label>
