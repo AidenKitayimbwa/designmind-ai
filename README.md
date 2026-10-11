@@ -1,3 +1,5 @@
+<img src="app/icon.svg" alt="DesignMind AI logo" width="64" height="64">
+
 # DesignMind AI
 
 Upload up to 3 screenshots of your product and get a design review in a few minutes. Six AI reviewers check the visuals, usability, accessibility and market, then pin the most important fixes onto your screenshots.
@@ -28,7 +30,7 @@ flowchart LR
 | 6. Design comparison | Picks the stronger screen in each area |
 | 7. Lead reviewer | Removes repeats, ranks the fixes and scores each screen |
 
-Steps 2–6 run at the same time. Results show as numbered pins on your screenshots plus 7 tabs, and you can export a PDF or JSON.
+Steps 2–6 run at the same time. Results show as numbered pins on your screenshots plus 7 tabs, and you can export a PDF or JSON. The **See an example** page has a finished review and a short product tour video.
 
 ## Run it locally
 
@@ -73,3 +75,7 @@ To see a finished review without a key, open **See an example** in the app.
 ## Credits
 
 The visual review's craft criteria paraphrase Anthropic's [frontend-design skill](https://github.com/anthropics/skills/tree/main/skills/frontend-design) (Apache-2.0).
+
+## License
+
+[MIT](LICENSE) © 2026 Raees Basheer

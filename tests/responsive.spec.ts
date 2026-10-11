@@ -20,7 +20,7 @@ test("home page: upload zone, key choice and Continue work", async ({ page }, in
   await expect(zone).toBeVisible();
   const chooser = page.waitForEvent("filechooser");
   await page.getByRole("button", { name: "Choose files" }).click();
-  await (await chooser).setFiles("public/examples/screen-a.jpg");
+  await (await chooser).setFiles("public/examples/landing.jpg");
   await expect(page.getByAltText("Screen A thumbnail")).toBeVisible();
 
   // Key choice: Outskill key is the default, BYOK shows the key field

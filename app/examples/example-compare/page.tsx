@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ReviewResults from "@/components/ReviewResults";
 import StepProgress from "@/components/StepProgress";
+import TourVideo from "@/components/TourVideo";
 import type { Review } from "@/lib/steps";
 import sample from "@/tests/fixtures/sample-result.json";
 
@@ -22,6 +23,7 @@ export default function ExamplePage() {
         </div>
         <dl className="text-sm"><dt className="inline text-muted">Model: </dt><dd className="inline font-semibold">{review.model}</dd></dl>
       </header>
+      <TourVideo />
       <StepProgress steps={review.steps} />
       <ReviewResults review={review} />
     </div>
