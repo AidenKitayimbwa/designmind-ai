@@ -31,6 +31,14 @@ test("home page: upload zone, key choice and Continue work", async ({ page }, in
   await expect(page.getByRole("button", { name: "Continue" })).toBeDisabled();
   await outskill.check();
 
+  // An invalid Custom model ID (e.g. "Test1") blocks Continue until it's fixed or cleared
+  await page.getByText("Advanced").click();
+  const custom = page.getByLabel("Custom model ID");
+  await custom.fill("Test1");
+  await expect(page.getByText(/Use a full OpenRouter model ID/)).toBeVisible();
+  await expect(page.getByRole("button", { name: "Continue" })).toBeDisabled();
+  await custom.fill("");
+
   // Continue is enabled once an image is added (trial click: don't start a real review)
   const cont = page.getByRole("button", { name: "Continue" });
   await expect(cont).toBeVisible();

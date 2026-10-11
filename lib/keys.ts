@@ -46,6 +46,10 @@ export function messageForStatus(status: number, keySource: KeySource, detail = 
   }
   if (status === 429) return new AppError(429, "OpenRouter is rate limiting requests (429). Wait a few seconds, then click Retry.", "rate_limited");
   if (status === 413) return new AppError(413, "The screenshots are too large to send (413). Use smaller images.", "too_large");
+  const badModel = detail.match(/(\S+) is not a valid model id/i);
+  if (badModel) {
+    return new AppError(400, `"${badModel[1].slice(0, 80)}" isn't a valid OpenRouter model ID. Start a new review and pick a preset under Advanced, or clear the Custom model ID field.`, "invalid_model");
+  }
   if (status === 404 || /image|vision|modalit|tool|support/.test(d)) {
     return new AppError(400, "This model can't read images or use web search. Pick a preset under Advanced, such as google/gemini-3.8-flash.", "model_unsupported");
   }

@@ -7,7 +7,7 @@ import {
   getKeySettings, getSavedModel, newReviewId, resizeImage, saveReview, setByokKey, setKeyMode, setSavedModel, shrinkDataUrl,
   type KeyMode,
 } from "@/lib/review-store";
-import { DEFAULT_MODEL, emptySteps, MODEL_PRESETS, type Review, type ScreenImage, type ScreenRef } from "@/lib/steps";
+import { DEFAULT_MODEL, emptySteps, isValidModelId, MODEL_PRESETS, type Review, type ScreenImage, type ScreenRef } from "@/lib/steps";
 
 const LETTERS: ScreenRef[] = ["A", "B", "C"];
 const ACCEPT = ["image/png", "image/jpeg", "image/webp"];
@@ -65,7 +65,8 @@ export default function UploadForm() {
 
   const effectiveModel = customModel || model;
   const needsKey = mode === "byok" && !apiKey;
-  const canContinue = images.length > 0 && !needsKey && !busy;
+  const badModel = customModel !== "" && !isValidModelId(customModel);
+  const canContinue = images.length > 0 && !needsKey && !badModel && !busy;
 
   async function onContinue(e: React.FormEvent) {
     e.preventDefault();
@@ -175,7 +176,9 @@ export default function UploadForm() {
             ? "Add at least one screenshot to continue."
             : needsKey
               ? "Enter your OpenRouter key, or switch back to the Outskill key."
-              : `Model: ${effectiveModel}`}
+              : badModel
+                ? "Fix the Custom model ID under Advanced, or clear it to use the dropdown."
+                : `Model: ${effectiveModel}`}
         </p>
         <button type="submit" disabled={!canContinue} aria-describedby="continue-hint" className="min-h-12 rounded-md bg-ink px-8 font-display text-lg font-bold text-white disabled:cursor-not-allowed disabled:bg-muted/60">
           {busy && images.length > 0 ? "Preparing…" : "Continue"}

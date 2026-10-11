@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { KeyMode } from "@/lib/review-store";
-import { MODEL_PRESETS } from "@/lib/steps";
+import { isValidModelId, MODEL_PRESETS } from "@/lib/steps";
 
 type Props = {
   mode: KeyMode;
@@ -35,6 +35,7 @@ export default function KeyOptions(p: Props) {
     }
   }
 
+  const customInvalid = p.customModel !== "" && !isValidModelId(p.customModel);
   const radio = "flex min-h-11 cursor-pointer items-start gap-3 rounded-lg border p-3 has-[:checked]:border-ink has-[:checked]:bg-paper";
 
   return (
@@ -101,7 +102,19 @@ export default function KeyOptions(p: Props) {
           </label>
           <label className="block">
             <span className="text-sm font-bold">Custom model ID</span>
-            <input value={p.customModel} onChange={(e) => p.onCustomModelChange(e.target.value.trim())} placeholder="Overrides the dropdown, e.g. vendor/model" className="mt-1 min-h-11 w-full rounded-md border border-line bg-surface px-3 text-sm" />
+            <input
+              value={p.customModel}
+              onChange={(e) => p.onCustomModelChange(e.target.value.trim())}
+              placeholder="Overrides the dropdown, e.g. vendor/model"
+              aria-invalid={customInvalid}
+              aria-describedby="custom-model-help"
+              className={`mt-1 min-h-11 w-full rounded-md border bg-surface px-3 text-sm ${customInvalid ? "border-fail" : "border-line"}`}
+            />
+            <span id="custom-model-help" className={`mt-1 block text-sm ${customInvalid ? "text-fail" : "text-muted"}`}>
+              {customInvalid
+                ? "Use a full OpenRouter model ID such as anthropic/claude-haiku-5.5, or clear this field to use the dropdown."
+                : "Leave empty to use the model picked in the dropdown."}
+            </span>
           </label>
         </div>
       </details>
