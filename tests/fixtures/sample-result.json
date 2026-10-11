@@ -1,0 +1,2889 @@
+{
+  "id": "rev-example-fernway",
+  "createdAt": 1791675909636,
+  "images": [
+    {
+      "id": "A",
+      "label": "Landing page",
+      "src": "/examples/screen-a.jpg",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "id": "B",
+      "label": "Pricing",
+      "src": "/examples/screen-b.jpg",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "id": "C",
+      "label": "Mobile sign-up",
+      "src": "/examples/screen-c.jpg",
+      "width": 591,
+      "height": 1280
+    }
+  ],
+  "context": {
+    "product": "Fernway Learn, an online platform with AI skills courses and an AI tutor",
+    "website": "",
+    "audience": "Working professionals moving into AI roles"
+  },
+  "model": "google/gemini-3.8-flash",
+  "keyMode": "outskill",
+  "steps": {
+    "search": {
+      "status": "done",
+      "startedAt": 1791675909723,
+      "finishedAt": 1791675975722,
+      "keySource": "outskill"
+    },
+    "visual": {
+      "status": "done",
+      "startedAt": 1791675975734,
+      "finishedAt": 1791676012216,
+      "keySource": "outskill"
+    },
+    "ux": {
+      "status": "done",
+      "startedAt": 1791675975748,
+      "finishedAt": 1791675999398,
+      "keySource": "outskill"
+    },
+    "a11y": {
+      "status": "done",
+      "startedAt": 1791675975764,
+      "finishedAt": 1791675998843,
+      "keySource": "outskill"
+    },
+    "market": {
+      "status": "done",
+      "startedAt": 1791675975782,
+      "finishedAt": 1791676055924,
+      "keySource": "outskill"
+    },
+    "compare": {
+      "status": "done",
+      "startedAt": 1791675975894,
+      "finishedAt": 1791675989207,
+      "keySource": "outskill"
+    },
+    "lead": {
+      "status": "done",
+      "startedAt": 1791676055930,
+      "finishedAt": 1791676078113,
+      "keySource": "outskill"
+    }
+  },
+  "outputs": {
+    "search": {
+      "screens": [
+        {
+          "screenRef": "A",
+          "retrievalDescription": "Desktop landing page hero section and social proof metrics for Fernway Learn. At the top, the navigation bar shows the purple 'Fernway Learn' brand logo, navigation links for 'Courses', 'Paths', 'Pricing', and 'Blog', alongside subtle right-aligned utility icon placeholders. The hero area uses a pale periwinkle gradient backdrop and a two-column layout. The left column presents the large bold headline 'Master AI skills that get you hired', featuring 'AI skills' highlighted in periwinkle font, followed by descriptive copy: 'Bite-sized courses, hands-on projects and an AI tutor that adapts to you. Join thousands of learners building real careers.' Underneath is a solid periwinkle CTA button labeled 'Get Started' beside a text link 'Learn more'. The right column displays an elevated, rounded card titled 'Your learning path' showing horizontal placeholder skeleton lines representing module progression. Positioned directly below the hero are four white stat cards highlighting '120+ Courses', '50k Learners', '4.8 Average rating', and '92% Completion', underlined by the credit line 'Trusted by teams at leading companies worldwide'."
+        },
+        {
+          "screenRef": "B",
+          "retrievalDescription": "Desktop pricing tier comparison page set against a plain white background. Centered text at the top reads 'Simple, transparent pricing' above the subhead 'Choose the plan that's right for you.' and a billing toggle reading 'Monthly · Yearly (save 20%)'. Below, three distinct plan cards are arranged horizontally. The 'Starter' tier card displays '$0/month', listing checkmarked features '5 intro courses', 'Community forum', and 'Certificates', paired with a light gray button labeled 'Submit'. The center 'Pro' tier card is highlighted with a violet border and a soft pink badge reading 'Popular'; it displays '$29/month' with features 'All 120+ courses', 'AI tutor', 'Projects with feedback', and 'Certificates', completed by a prominent purple button reading 'Get Started'. The rightmost 'Teams' tier card shows '$99/month' listing 'Everything in Pro', '10 seats', 'Admin dashboard', and 'SSO', alongside an outlined button labeled 'Contact us'. The screen utilizes clean modern typography with violet accents on the recommended option."
+        },
+        {
+          "screenRef": "C",
+          "retrievalDescription": "A clean, vertical account creation modal dialog displayed against a minimalist white background. The modal header features the brand name 'Fernway' in bold purple on the left and a gray close '✕' icon in the top right corner. The title block contains a bold primary header 'Create your account' supported by the subtitle 'Start learning in minutes.' Three rounded, outlined input fields follow in vertical succession with placeholder text: 'Full name', 'Email', and 'Password'. Below the inputs, an unchecked compliance box is paired with 'I agree to the Terms and Privacy Policy'. A full-width, solid purple button labeled 'Submit' provides the main call to action. Beneath this, a subtle divider with the text 'or continue with' sits above three circular single sign-on buttons labeled 'G' for Google, 'in' for LinkedIn, and a command icon. At the bottom, secondary text prompts 'Already have an account? Log in'."
+        }
+      ],
+      "productCategory": "Technical EdTech / Online AI Upskilling & Interactive Learning SaaS",
+      "likelyAudience": "Working professionals moving into AI roles, career switchers, and technical practitioners seeking structured AI education and practical projects",
+      "summary": "Fernway Learn is an online upskilling platform providing bite-sized AI courses, structured career paths, and an adaptive AI tutor. The provided screens illustrate the desktop landing page with credibility metrics, the 3-tier pricing comparison (Starter, Pro, and Teams), and the modal account registration flow.",
+      "similarApps": [
+        {
+          "name": "DataCamp",
+          "url": "https://www.datacamp.com",
+          "platform": "Web, iOS, Android",
+          "rating": "4.6 / 5",
+          "whySimilar": "DataCamp shares the exact same core value proposition—interactive, bite-sized technical courses in data science and AI, hands-on browser exercises, career tracks/learning paths, and structured tiers ranging from free introductory courses to personal Pro plans and Teams/Enterprise tiers.",
+          "sourceUrl": "https://www.g2.com/compare/datacamp-vs-kaggle"
+        },
+        {
+          "name": "Brilliant.org",
+          "url": "https://apps.apple.com/us/app/brilliant-learn-math-coding/id913335252",
+          "platform": "iOS, Android, Web",
+          "rating": "4.7 / 5",
+          "whySimilar": "Brilliant emphasizes bite-sized interactive learning for AI, computer science, and data. Its visual design features clean typography, soft card containers, visual learning path previews, and an integrated interactive AI tutor to assist learners through problems.",
+          "sourceUrl": "https://apps.apple.com/us/app/brilliant-learn-math-coding/id913335252"
+        },
+        {
+          "name": "Codecademy",
+          "url": "https://www.codecademy.com",
+          "platform": "Web, iOS, Android",
+          "rating": "4.3 / 5",
+          "whySimilar": "Features an identical 3-tiered pricing architecture (Free Starter, individual Pro with full project/certificate access, and Teams/Enterprise with administrative seats), accompanied by bite-sized hands-on curricula and career paths designed to help learners transition into tech roles.",
+          "sourceUrl": "https://thepivotwave.com/blog/best-ai-corporate-training-programs/"
+        },
+        {
+          "name": "Pluralsight Skills",
+          "url": "https://www.pluralsight.com",
+          "platform": "Web, iOS, Android",
+          "rating": "4.6 / 5",
+          "whySimilar": "Uses structured skill paths, hands-on interactive labs, and role-based learning tracks for AI and cloud technology. Its marketing pages heavily utilize stat callouts (course volumes, completion rates, learner counts) and standard multi-seat business tiering.",
+          "sourceUrl": "https://www.g2.com/compare/datacamp-vs-pluralsight-skills"
+        },
+        {
+          "name": "Coursera",
+          "url": "https://coursera.org",
+          "platform": "Web, iOS, Android",
+          "rating": "4.5 / 5",
+          "whySimilar": "Employs a career-outcome-driven hero section ('Master skills that get you hired'), partner trust logos, certificate pathways, and a streamlined registration modal with one-click social SSO (Google, Apple, Facebook).",
+          "sourceUrl": "https://thepivotwave.com/blog/best-ai-corporate-training-programs/"
+        }
+      ],
+      "trace": {
+        "searches": 4,
+        "citedUrls": [
+          {
+            "url": "https://uk.trustpilot.com/review/www.datacamp.com",
+            "title": "DataCamp Reviews | Read Customer Service Reviews of www.datacamp.com"
+          },
+          {
+            "url": "https://checkthat.ai/brands/datacamp/reviews",
+            "title": "DataCamp Reviews 2026: What 1,580+ Users Actually Think"
+          },
+          {
+            "url": "https://www.datacamp.com/blog/g2-names-datacamp-as-a-leader-in-technical-skills-development",
+            "title": ""
+          },
+          {
+            "url": "https://www.g2.com/compare/datacamp-vs-kaggle",
+            "title": "Compare DataCamp and Kaggle  Social Share Options"
+          },
+          {
+            "url": "https://www.g2.com/compare/datacamp-vs-pluralsight-skills",
+            "title": "Compare DataCamp and Pluralsight Skills  Social Share Options"
+          },
+          {
+            "url": "https://apps.apple.com/us/app/brilliant-learn-math-coding/id913335252",
+            "title": "‎Brilliant: Learn Math & Coding App - App Store"
+          },
+          {
+            "url": "https://apps.apple.com/us/app/brilliant-learn-math-coding/id913335252?platform=ipad&see-all=reviews",
+            "title": "‎Brilliant: Learn Math & Coding - Ratings & Reviews - App Store"
+          },
+          {
+            "url": "https://play.google.com/store/apps/details?hl=en_IE&id=org.brilliant.android",
+            "title": "Brilliant: Learn Math & Coding – Apps on Google Play"
+          },
+          {
+            "url": "https://yourappland.com/is-brilliant-app-worth-it/",
+            "title": "Is Brilliant Worth It in 2026? Pricing, Features, Pros & Cons - YourAppLand"
+          },
+          {
+            "url": "https://pliizy.com/brilliant-review-whats-it-all-about/",
+            "title": "Brilliant Review: What's it all about? - Top Brand Reviews - Pliizy"
+          },
+          {
+            "url": "https://answersq.com/codecademy-review/",
+            "title": "Codecademy Review 2026 - Is It Actually Worth the Monthly Price?"
+          },
+          {
+            "url": "https://whattobecome.com/reviews/codecademy/",
+            "title": "Codecademy Review"
+          },
+          {
+            "url": "https://checkthat.ai/brands/codecademy",
+            "title": "Codecademy"
+          },
+          {
+            "url": "https://shouldiuse.io/r/codecademy",
+            "title": "Codecademy Review 2026: Pricing & Pros | Should I Use It"
+          },
+          {
+            "url": "https://thepivotwave.com/blog/best-ai-corporate-training-programs/",
+            "title": "The 6 best AI corporate training programs for 2026 - The Pivot Wave"
+          }
+        ]
+      }
+    },
+    "compare": {
+      "mode": "screens",
+      "note": "Screens A, B, and C represent distinct stages of the user acquisition funnel: the landing page hero, the subscription pricing matrix, and the modal onboarding flow.",
+      "picks": [
+        {
+          "area": "visual design",
+          "winner": "A",
+          "reason": "The subtle multi-tonal gradient, balanced card elevations, and typographic scale create an attractive, modern landing page aesthetic."
+        },
+        {
+          "area": "usability",
+          "winner": "A",
+          "reason": "It offers clear hierarchical navigation, distinct primary and secondary CTAs, and avoids the mismatched button labels found in Screen B and placeholder-only fields in Screen C."
+        },
+        {
+          "area": "accessibility",
+          "winner": "B",
+          "reason": "It maintains superior text-to-background contrast ratios across plan names, prices, and feature checklists compared to the light text and pastel buttons elsewhere."
+        },
+        {
+          "area": "clarity of purpose",
+          "winner": "C",
+          "reason": "The modal eliminates ambient distractions to focus solely on a single, well-defined user task: creating an account."
+        }
+      ]
+    },
+    "a11y": {
+      "elements": [
+        {
+          "id": "el-1",
+          "screenRef": "A",
+          "box": [
+            45,
+            28,
+            111,
+            24
+          ],
+          "role": "heading",
+          "text": "Fernway Learn"
+        },
+        {
+          "id": "el-2",
+          "screenRef": "A",
+          "box": [
+            435,
+            33,
+            38,
+            14
+          ],
+          "role": "link",
+          "text": "Courses"
+        },
+        {
+          "id": "el-3",
+          "screenRef": "A",
+          "box": [
+            494,
+            33,
+            25,
+            14
+          ],
+          "role": "link",
+          "text": "Paths"
+        },
+        {
+          "id": "el-4",
+          "screenRef": "A",
+          "box": [
+            540,
+            33,
+            32,
+            14
+          ],
+          "role": "link",
+          "text": "Pricing"
+        },
+        {
+          "id": "el-5",
+          "screenRef": "A",
+          "box": [
+            594,
+            33,
+            22,
+            14
+          ],
+          "role": "link",
+          "text": "Blog"
+        },
+        {
+          "id": "el-6",
+          "screenRef": "A",
+          "box": [
+            45,
+            169,
+            426,
+            112
+          ],
+          "role": "heading",
+          "text": "Master AI skills that get you hired"
+        },
+        {
+          "id": "el-7",
+          "screenRef": "A",
+          "box": [
+            45,
+            311,
+            336,
+            83
+          ],
+          "role": "body text",
+          "text": "Bite-sized courses, hands-on projects and an AI tutor that adapts to you. Join thousands of learners building real careers."
+        },
+        {
+          "id": "el-8",
+          "screenRef": "A",
+          "box": [
+            45,
+            433,
+            93,
+            52
+          ],
+          "role": "button",
+          "text": "Get Started"
+        },
+        {
+          "id": "el-9",
+          "screenRef": "A",
+          "box": [
+            160,
+            451,
+            53,
+            17
+          ],
+          "role": "link",
+          "text": "Learn more"
+        },
+        {
+          "id": "el-10",
+          "screenRef": "B",
+          "box": [
+            314,
+            142,
+            372,
+            43
+          ],
+          "role": "heading",
+          "text": "Simple, transparent pricing"
+        },
+        {
+          "id": "el-11",
+          "screenRef": "B",
+          "box": [
+            103,
+            595,
+            224,
+            50
+          ],
+          "role": "button",
+          "text": "Submit"
+        },
+        {
+          "id": "el-12",
+          "screenRef": "B",
+          "box": [
+            387,
+            636,
+            225,
+            50
+          ],
+          "role": "button",
+          "text": "Get Started"
+        },
+        {
+          "id": "el-13",
+          "screenRef": "B",
+          "box": [
+            672,
+            636,
+            225,
+            50
+          ],
+          "role": "button",
+          "text": "Contact us"
+        },
+        {
+          "id": "el-14",
+          "screenRef": "C",
+          "box": [
+            909,
+            34,
+            27,
+            16
+          ],
+          "role": "icon button",
+          "text": "Close"
+        },
+        {
+          "id": "el-15",
+          "screenRef": "C",
+          "box": [
+            57,
+            107,
+            708,
+            34
+          ],
+          "role": "heading",
+          "text": "Create your account"
+        },
+        {
+          "id": "el-16",
+          "screenRef": "C",
+          "box": [
+            57,
+            191,
+            886,
+            55
+          ],
+          "role": "input",
+          "text": "Full name"
+        },
+        {
+          "id": "el-17",
+          "screenRef": "C",
+          "box": [
+            57,
+            263,
+            886,
+            55
+          ],
+          "role": "input",
+          "text": "Email"
+        },
+        {
+          "id": "el-18",
+          "screenRef": "C",
+          "box": [
+            57,
+            334,
+            886,
+            55
+          ],
+          "role": "input",
+          "text": "Password"
+        },
+        {
+          "id": "el-19",
+          "screenRef": "C",
+          "box": [
+            57,
+            409,
+            35,
+            17
+          ],
+          "role": "input",
+          "text": "Checkbox"
+        },
+        {
+          "id": "el-20",
+          "screenRef": "C",
+          "box": [
+            56,
+            455,
+            888,
+            59
+          ],
+          "role": "button",
+          "text": "Submit"
+        },
+        {
+          "id": "el-21",
+          "screenRef": "C",
+          "box": [
+            301,
+            586,
+            111,
+            53
+          ],
+          "role": "button",
+          "text": "G"
+        },
+        {
+          "id": "el-22",
+          "screenRef": "C",
+          "box": [
+            444,
+            586,
+            112,
+            53
+          ],
+          "role": "button",
+          "text": "in"
+        },
+        {
+          "id": "el-23",
+          "screenRef": "C",
+          "box": [
+            588,
+            586,
+            112,
+            53
+          ],
+          "role": "button",
+          "text": "⌘"
+        },
+        {
+          "id": "el-24",
+          "screenRef": "C",
+          "box": [
+            647,
+            676,
+            90,
+            17
+          ],
+          "role": "link",
+          "text": "Log in"
+        }
+      ],
+      "issues": [
+        {
+          "id": "a11y-c-1",
+          "screenRef": "A",
+          "box": [
+            435,
+            33,
+            38,
+            14
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Courses\" (link) measures 4.25:1 (#787a7f on #fdfefe); it needs 4.5:1. Borderline: anti-aliasing can make small, thin text measure slightly lower than its CSS colour, so check the colours in code.",
+          "recommendation": "Change the text colour to about #74757a (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-s-2",
+          "screenRef": "A",
+          "box": [
+            435,
+            33,
+            38,
+            14
+          ],
+          "principle": "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Courses\" (link) is an estimated 55×13 CSS px (estimate from screenshot width). The clickable area may extend beyond the text; links inside a sentence are exempt.",
+          "recommendation": "Make the target at least 24×24 CSS px (44×44 px for touch), or add spacing so a 24 px circle around it doesn't overlap other targets.",
+          "effort": "S",
+          "citations": [
+            "wcag-target-size"
+          ]
+        },
+        {
+          "id": "a11y-c-3",
+          "screenRef": "A",
+          "box": [
+            494,
+            33,
+            25,
+            14
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Paths\" (link) measures 4.44:1 (#74777d on #fdfefe); it needs 4.5:1. Borderline: anti-aliasing can make small, thin text measure slightly lower than its CSS colour, so check the colours in code.",
+          "recommendation": "Change the text colour to about #71757a (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-s-4",
+          "screenRef": "A",
+          "box": [
+            494,
+            33,
+            25,
+            14
+          ],
+          "principle": "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Paths\" (link) is an estimated 36×13 CSS px (estimate from screenshot width). The clickable area may extend beyond the text; links inside a sentence are exempt.",
+          "recommendation": "Make the target at least 24×24 CSS px (44×44 px for touch), or add spacing so a 24 px circle around it doesn't overlap other targets.",
+          "effort": "S",
+          "citations": [
+            "wcag-target-size"
+          ]
+        },
+        {
+          "id": "a11y-c-5",
+          "screenRef": "A",
+          "box": [
+            540,
+            33,
+            32,
+            14
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Pricing\" (link) measures 3.87:1 (#7f8188 on #fdfefe); it needs 4.5:1. Borderline: anti-aliasing can make small, thin text measure slightly lower than its CSS colour, so check the colours in code.",
+          "recommendation": "Change the text colour to about #72747a (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-s-6",
+          "screenRef": "A",
+          "box": [
+            540,
+            33,
+            32,
+            14
+          ],
+          "principle": "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Pricing\" (link) is an estimated 46×13 CSS px (estimate from screenshot width). The clickable area may extend beyond the text; links inside a sentence are exempt.",
+          "recommendation": "Make the target at least 24×24 CSS px (44×44 px for touch), or add spacing so a 24 px circle around it doesn't overlap other targets.",
+          "effort": "S",
+          "citations": [
+            "wcag-target-size"
+          ]
+        },
+        {
+          "id": "a11y-c-7",
+          "screenRef": "A",
+          "box": [
+            594,
+            33,
+            22,
+            14
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Blog\" (link) measures 3.90:1 (#7e8083 on #fdfefe); it needs 4.5:1. Borderline: anti-aliasing can make small, thin text measure slightly lower than its CSS colour, so check the colours in code.",
+          "recommendation": "Change the text colour to about #727376 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-s-8",
+          "screenRef": "A",
+          "box": [
+            594,
+            33,
+            22,
+            14
+          ],
+          "principle": "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Blog\" (link) is an estimated 32×13 CSS px (estimate from screenshot width). The clickable area may extend beyond the text; links inside a sentence are exempt.",
+          "recommendation": "Make the target at least 24×24 CSS px (44×44 px for touch), or add spacing so a 24 px circle around it doesn't overlap other targets.",
+          "effort": "S",
+          "citations": [
+            "wcag-target-size"
+          ]
+        },
+        {
+          "id": "a11y-c-9",
+          "screenRef": "A",
+          "box": [
+            45,
+            311,
+            336,
+            83
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "critical",
+          "evidence": "\"Bite-sized courses, hands-on projects and an AI tutor that adapts to you. Join thousands of learners building real careers.\" (body text) measures 2.41:1 (#9b9ead on #f3f2fd); it needs 4.5:1.",
+          "recommendation": "Change the text colour to about #6c6e79 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-c-10",
+          "screenRef": "A",
+          "box": [
+            45,
+            433,
+            93,
+            52
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "critical",
+          "evidence": "\"Get Started\" (button) measures 1.95:1 (#f5ffff on #a5b4fd); it needs 4.5:1.",
+          "recommendation": "Change the text colour to about #454747 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-c-11",
+          "screenRef": "A",
+          "box": [
+            160,
+            451,
+            53,
+            17
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Learn more\" (link) measures 4.08:1 (#716ebc on #f3f3fe); it needs 4.5:1. Borderline: anti-aliasing can make small, thin text measure slightly lower than its CSS colour, so check the colours in code.",
+          "recommendation": "Change the text colour to about #6b67b1 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-s-12",
+          "screenRef": "A",
+          "box": [
+            160,
+            451,
+            53,
+            17
+          ],
+          "principle": "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Learn more\" (link) is an estimated 76×15 CSS px (estimate from screenshot width). The clickable area may extend beyond the text; links inside a sentence are exempt.",
+          "recommendation": "Make the target at least 24×24 CSS px (44×44 px for touch), or add spacing so a 24 px circle around it doesn't overlap other targets.",
+          "effort": "S",
+          "citations": [
+            "wcag-target-size"
+          ]
+        },
+        {
+          "id": "a11y-c-13",
+          "screenRef": "B",
+          "box": [
+            103,
+            595,
+            224,
+            50
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "critical",
+          "evidence": "\"Submit\" (button) measures 2.43:1 (#9f9ea2 on #f3f4f6); it needs 4.5:1.",
+          "recommendation": "Change the text colour to about #6f6e71 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-c-14",
+          "screenRef": "B",
+          "box": [
+            387,
+            636,
+            225,
+            50
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Get Started\" (button) measures 4.45:1 (#fffffc on #6366f2); it needs 4.5:1. Borderline: anti-aliasing can make small, thin text measure slightly lower than its CSS colour, so check the colours in code.",
+          "recommendation": "Change the text colour to about #050505 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-c-15",
+          "screenRef": "C",
+          "box": [
+            909,
+            34,
+            27,
+            16
+          ],
+          "principle": "WCAG 2.2 SC 1.4.11 Non-text Contrast",
+          "severity": "minor",
+          "evidence": "\"Close\" (icon button) measures 2.67:1 (#9b9ea0 on #fdfefe); it needs 3:1. Borderline: anti-aliasing can make small, thin text measure slightly lower than its CSS colour, so check the colours in code.",
+          "recommendation": "Change the icon colour to about #919496 (or adjust the background) to reach at least 3:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-non-text-contrast"
+          ]
+        },
+        {
+          "id": "a11y-s-16",
+          "screenRef": "C",
+          "box": [
+            909,
+            34,
+            27,
+            16
+          ],
+          "principle": "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+          "severity": "major",
+          "evidence": "\"Close\" (icon button) is an estimated 11×14 CSS px (estimate from screenshot width).",
+          "recommendation": "Make the target at least 24×24 CSS px (44×44 px for touch), or add spacing so a 24 px circle around it doesn't overlap other targets.",
+          "effort": "S",
+          "citations": [
+            "wcag-target-size"
+          ]
+        },
+        {
+          "id": "a11y-c-17",
+          "screenRef": "C",
+          "box": [
+            57,
+            191,
+            886,
+            55
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "critical",
+          "evidence": "\"Full name\" (input) measures 1.80:1 (#c1c0c4 on #ffffff); it needs 4.5:1.",
+          "recommendation": "Change the text colour to about #747376 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-c-18",
+          "screenRef": "C",
+          "box": [
+            57,
+            263,
+            886,
+            55
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "critical",
+          "evidence": "\"Email\" (input) measures 1.80:1 (#c1c1c4 on #ffffff); it needs 4.5:1.",
+          "recommendation": "Change the text colour to about #747476 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-c-19",
+          "screenRef": "C",
+          "box": [
+            57,
+            334,
+            886,
+            55
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "critical",
+          "evidence": "\"Password\" (input) measures 1.82:1 (#c0bfc3 on #ffffff); it needs 4.5:1.",
+          "recommendation": "Change the text colour to about #737375 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-c-20",
+          "screenRef": "C",
+          "box": [
+            57,
+            409,
+            35,
+            17
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "critical",
+          "evidence": "\"Checkbox\" (input) measures 1.52:1 (#d1d1d1 on #fefeff); it needs 4.5:1.",
+          "recommendation": "Change the text colour to about #757575 (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-s-21",
+          "screenRef": "C",
+          "box": [
+            57,
+            409,
+            35,
+            17
+          ],
+          "principle": "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+          "severity": "major",
+          "evidence": "\"Checkbox\" (input) is an estimated 14×14 CSS px (estimate from screenshot width).",
+          "recommendation": "Make the target at least 24×24 CSS px (44×44 px for touch), or add spacing so a 24 px circle around it doesn't overlap other targets.",
+          "effort": "S",
+          "citations": [
+            "wcag-target-size"
+          ]
+        },
+        {
+          "id": "a11y-c-22",
+          "screenRef": "C",
+          "box": [
+            647,
+            676,
+            90,
+            17
+          ],
+          "principle": "WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+          "severity": "critical",
+          "evidence": "\"Log in\" (link) measures 2.12:1 (#a9b0d0 on #fdfdfe); it needs 4.5:1.",
+          "recommendation": "Change the text colour to about #6f748a (or adjust the background) to reach at least 4.5:1.",
+          "effort": "S",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "id": "a11y-s-23",
+          "screenRef": "C",
+          "box": [
+            647,
+            676,
+            90,
+            17
+          ],
+          "principle": "WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+          "severity": "minor",
+          "evidence": "\"Log in\" (link) is an estimated 35×14 CSS px (estimate from screenshot width). The clickable area may extend beyond the text; links inside a sentence are exempt.",
+          "recommendation": "Make the target at least 24×24 CSS px (44×44 px for touch), or add spacing so a 24 px circle around it doesn't overlap other targets.",
+          "effort": "S",
+          "citations": [
+            "wcag-target-size"
+          ]
+        },
+        {
+          "id": "a11y-1",
+          "screenRef": "C",
+          "box": [
+            57,
+            191,
+            886,
+            198
+          ],
+          "principle": "wcag-labels",
+          "severity": "major",
+          "evidence": "The 'Full name', 'Email', and 'Password' input fields use placeholder text inside the inputs rather than persistent visible labels.",
+          "recommendation": "Provide persistent visible text labels above each input field so context remains visible while users are typing.",
+          "effort": "S",
+          "citations": [
+            "wcag-labels",
+            "screen-C#1"
+          ]
+        },
+        {
+          "id": "a11y-2",
+          "screenRef": "C",
+          "box": [
+            909,
+            34,
+            27,
+            16
+          ],
+          "principle": "wcag-labels",
+          "severity": "major",
+          "evidence": "The modal close button consists of an '✕' symbol without visible text or an apparent screen reader label.",
+          "recommendation": "Add an explicit aria-label='Close' or visually hidden text to ensure assistive technology announces the button's action.",
+          "effort": "S",
+          "citations": [
+            "wcag-labels",
+            "screen-C#1"
+          ]
+        },
+        {
+          "id": "a11y-3",
+          "screenRef": "C",
+          "box": [
+            57,
+            191,
+            886,
+            198
+          ],
+          "principle": "wcag-non-text-contrast",
+          "severity": "major",
+          "evidence": "The light gray boundary borders of the input fields appear extremely faint against the white background.",
+          "recommendation": "Increase input container border stroke contrast to at least a 3:1 ratio against the adjacent white surface.",
+          "effort": "S",
+          "citations": [
+            "wcag-non-text-contrast",
+            "screen-C#1"
+          ]
+        }
+      ],
+      "measurements": [
+        {
+          "elementId": "el-1",
+          "screenRef": "A",
+          "role": "heading",
+          "text": "Fernway Learn",
+          "box": [
+            45,
+            28,
+            111,
+            24
+          ],
+          "ratio": 7.5,
+          "required": 4.5,
+          "contrastPass": true,
+          "fg": "#4c42b5",
+          "bg": "#fdfdfe",
+          "estSize": null,
+          "sizePass": null
+        },
+        {
+          "elementId": "el-2",
+          "screenRef": "A",
+          "role": "link",
+          "text": "Courses",
+          "box": [
+            435,
+            33,
+            38,
+            14
+          ],
+          "ratio": 4.25,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#787a7f",
+          "bg": "#fdfefe",
+          "estSize": {
+            "w": 55,
+            "h": 13
+          },
+          "sizePass": false
+        },
+        {
+          "elementId": "el-3",
+          "screenRef": "A",
+          "role": "link",
+          "text": "Paths",
+          "box": [
+            494,
+            33,
+            25,
+            14
+          ],
+          "ratio": 4.44,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#74777d",
+          "bg": "#fdfefe",
+          "estSize": {
+            "w": 36,
+            "h": 13
+          },
+          "sizePass": false
+        },
+        {
+          "elementId": "el-4",
+          "screenRef": "A",
+          "role": "link",
+          "text": "Pricing",
+          "box": [
+            540,
+            33,
+            32,
+            14
+          ],
+          "ratio": 3.87,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#7f8188",
+          "bg": "#fdfefe",
+          "estSize": {
+            "w": 46,
+            "h": 13
+          },
+          "sizePass": false
+        },
+        {
+          "elementId": "el-5",
+          "screenRef": "A",
+          "role": "link",
+          "text": "Blog",
+          "box": [
+            594,
+            33,
+            22,
+            14
+          ],
+          "ratio": 3.9,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#7e8083",
+          "bg": "#fdfefe",
+          "estSize": {
+            "w": 32,
+            "h": 13
+          },
+          "sizePass": false
+        },
+        {
+          "elementId": "el-6",
+          "screenRef": "A",
+          "role": "heading",
+          "text": "Master AI skills that get you hired",
+          "box": [
+            45,
+            169,
+            426,
+            112
+          ],
+          "ratio": 14.73,
+          "required": 3,
+          "contrastPass": true,
+          "fg": "#18202e",
+          "bg": "#f3f2fd",
+          "estSize": null,
+          "sizePass": null
+        },
+        {
+          "elementId": "el-7",
+          "screenRef": "A",
+          "role": "body text",
+          "text": "Bite-sized courses, hands-on projects and an AI tutor that adapts to you. Join thousands of learners building real careers.",
+          "box": [
+            45,
+            311,
+            336,
+            83
+          ],
+          "ratio": 2.41,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#9b9ead",
+          "bg": "#f3f2fd",
+          "estSize": null,
+          "sizePass": null
+        },
+        {
+          "elementId": "el-8",
+          "screenRef": "A",
+          "role": "button",
+          "text": "Get Started",
+          "box": [
+            45,
+            433,
+            93,
+            52
+          ],
+          "ratio": 1.95,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#f5ffff",
+          "bg": "#a5b4fd",
+          "estSize": {
+            "w": 134,
+            "h": 47
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-9",
+          "screenRef": "A",
+          "role": "link",
+          "text": "Learn more",
+          "box": [
+            160,
+            451,
+            53,
+            17
+          ],
+          "ratio": 4.08,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#716ebc",
+          "bg": "#f3f3fe",
+          "estSize": {
+            "w": 76,
+            "h": 15
+          },
+          "sizePass": false
+        },
+        {
+          "elementId": "el-10",
+          "screenRef": "B",
+          "role": "heading",
+          "text": "Simple, transparent pricing",
+          "box": [
+            314,
+            142,
+            372,
+            43
+          ],
+          "ratio": 16.48,
+          "required": 3,
+          "contrastPass": true,
+          "fg": "#191f2a",
+          "bg": "#fefefe",
+          "estSize": null,
+          "sizePass": null
+        },
+        {
+          "elementId": "el-11",
+          "screenRef": "B",
+          "role": "button",
+          "text": "Submit",
+          "box": [
+            103,
+            595,
+            224,
+            50
+          ],
+          "ratio": 2.43,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#9f9ea2",
+          "bg": "#f3f4f6",
+          "estSize": {
+            "w": 323,
+            "h": 45
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-12",
+          "screenRef": "B",
+          "role": "button",
+          "text": "Get Started",
+          "box": [
+            387,
+            636,
+            225,
+            50
+          ],
+          "ratio": 4.45,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#fffffc",
+          "bg": "#6366f2",
+          "estSize": {
+            "w": 324,
+            "h": 45
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-13",
+          "screenRef": "B",
+          "role": "button",
+          "text": "Contact us",
+          "box": [
+            672,
+            636,
+            225,
+            50
+          ],
+          "ratio": 8.95,
+          "required": 4.5,
+          "contrastPass": true,
+          "fg": "#474952",
+          "bg": "#ffffff",
+          "estSize": {
+            "w": 324,
+            "h": 45
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-14",
+          "screenRef": "C",
+          "role": "icon button",
+          "text": "Close",
+          "box": [
+            909,
+            34,
+            27,
+            16
+          ],
+          "ratio": 2.67,
+          "required": 3,
+          "contrastPass": false,
+          "fg": "#9b9ea0",
+          "bg": "#fdfefe",
+          "estSize": {
+            "w": 11,
+            "h": 14
+          },
+          "sizePass": false
+        },
+        {
+          "elementId": "el-15",
+          "screenRef": "C",
+          "role": "heading",
+          "text": "Create your account",
+          "box": [
+            57,
+            107,
+            708,
+            34
+          ],
+          "ratio": 16.79,
+          "required": 3,
+          "contrastPass": true,
+          "fg": "#161d2a",
+          "bg": "#feffff",
+          "estSize": null,
+          "sizePass": null
+        },
+        {
+          "elementId": "el-16",
+          "screenRef": "C",
+          "role": "input",
+          "text": "Full name",
+          "box": [
+            57,
+            191,
+            886,
+            55
+          ],
+          "ratio": 1.8,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#c1c0c4",
+          "bg": "#ffffff",
+          "estSize": {
+            "w": 346,
+            "h": 46
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-17",
+          "screenRef": "C",
+          "role": "input",
+          "text": "Email",
+          "box": [
+            57,
+            263,
+            886,
+            55
+          ],
+          "ratio": 1.8,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#c1c1c4",
+          "bg": "#ffffff",
+          "estSize": {
+            "w": 346,
+            "h": 46
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-18",
+          "screenRef": "C",
+          "role": "input",
+          "text": "Password",
+          "box": [
+            57,
+            334,
+            886,
+            55
+          ],
+          "ratio": 1.82,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#c0bfc3",
+          "bg": "#ffffff",
+          "estSize": {
+            "w": 346,
+            "h": 46
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-19",
+          "screenRef": "C",
+          "role": "input",
+          "text": "Checkbox",
+          "box": [
+            57,
+            409,
+            35,
+            17
+          ],
+          "ratio": 1.52,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#d1d1d1",
+          "bg": "#fefeff",
+          "estSize": {
+            "w": 14,
+            "h": 14
+          },
+          "sizePass": false
+        },
+        {
+          "elementId": "el-20",
+          "screenRef": "C",
+          "role": "button",
+          "text": "Submit",
+          "box": [
+            56,
+            455,
+            888,
+            59
+          ],
+          "ratio": 6.27,
+          "required": 4.5,
+          "contrastPass": true,
+          "fg": "#ffffff",
+          "bg": "#5046e5",
+          "estSize": {
+            "w": 346,
+            "h": 50
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-21",
+          "screenRef": "C",
+          "role": "button",
+          "text": "G",
+          "box": [
+            301,
+            586,
+            111,
+            53
+          ],
+          "ratio": 5.38,
+          "required": 4.5,
+          "contrastPass": true,
+          "fg": "#666a73",
+          "bg": "#fefffe",
+          "estSize": {
+            "w": 43,
+            "h": 45
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-22",
+          "screenRef": "C",
+          "role": "button",
+          "text": "in",
+          "box": [
+            444,
+            586,
+            112,
+            53
+          ],
+          "ratio": 5.16,
+          "required": 4.5,
+          "contrastPass": true,
+          "fg": "#6a6d73",
+          "bg": "#fefefe",
+          "estSize": {
+            "w": 44,
+            "h": 45
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-23",
+          "screenRef": "C",
+          "role": "button",
+          "text": "⌘",
+          "box": [
+            588,
+            586,
+            112,
+            53
+          ],
+          "ratio": 5.43,
+          "required": 4.5,
+          "contrastPass": true,
+          "fg": "#666a6f",
+          "bg": "#fefefe",
+          "estSize": {
+            "w": 44,
+            "h": 45
+          },
+          "sizePass": true
+        },
+        {
+          "elementId": "el-24",
+          "screenRef": "C",
+          "role": "link",
+          "text": "Log in",
+          "box": [
+            647,
+            676,
+            90,
+            17
+          ],
+          "ratio": 2.12,
+          "required": 4.5,
+          "contrastPass": false,
+          "fg": "#a9b0d0",
+          "bg": "#fdfdfe",
+          "estSize": {
+            "w": 35,
+            "h": 14
+          },
+          "sizePass": false
+        }
+      ]
+    },
+    "ux": {
+      "screens": [
+        {
+          "screenRef": "A",
+          "heuristics": [
+            {
+              "heuristic": "Visibility of system status",
+              "score": 3,
+              "note": "Metrics and social proof numbers are visible, but the path card shows unresolved skeleton state rather than live content."
+            },
+            {
+              "heuristic": "Match between system and the real world",
+              "score": 4,
+              "note": "Language around courses, paths, and completion rates aligns well with professional upskilling concepts."
+            },
+            {
+              "heuristic": "User control and freedom",
+              "score": 4,
+              "note": "Clear navigation options are present along the top navigation bar."
+            },
+            {
+              "heuristic": "Consistency and standards",
+              "score": 3,
+              "note": "Top right utility navigation uses non-standard illegible glyph icons instead of recognizable user controls."
+            },
+            {
+              "heuristic": "Error prevention",
+              "score": 4,
+              "note": "Informational landing layout with minimal inputs, reducing potential user error points."
+            },
+            {
+              "heuristic": "Recognition rather than recall",
+              "score": 3,
+              "note": "The learning path preview relies on abstract skeleton lines instead of showing concrete course titles or skills."
+            },
+            {
+              "heuristic": "Flexibility and efficiency of use",
+              "score": 3,
+              "note": "Provides standard direct CTA links, though lacking preview interactions or search."
+            },
+            {
+              "heuristic": "Aesthetic and minimalist design",
+              "score": 3,
+              "note": "Clean layout, but secondary copy and footer subtext have low color contrast against the white backdrop."
+            },
+            {
+              "heuristic": "Help users recognize, diagnose and recover from errors",
+              "score": 4,
+              "note": "No error states present on this static landing screen."
+            },
+            {
+              "heuristic": "Help and documentation",
+              "score": 3,
+              "note": "A 'Learn more' link exists, but detailed path information or FAQs are absent."
+            }
+          ]
+        },
+        {
+          "screenRef": "B",
+          "heuristics": [
+            {
+              "heuristic": "Visibility of system status",
+              "score": 2,
+              "note": "The monthly vs. yearly billing toggle is rendered as static text with no visual indication of which state is currently active."
+            },
+            {
+              "heuristic": "Match between system and the real world",
+              "score": 4,
+              "note": "Tier names and feature breakdowns represent common SaaS pricing patterns."
+            },
+            {
+              "heuristic": "User control and freedom",
+              "score": 3,
+              "note": "Users cannot clearly interact with the pricing period switcher to recalculate annual costs."
+            },
+            {
+              "heuristic": "Consistency and standards",
+              "score": 2,
+              "note": "The free Starter plan CTA is labeled 'Submit' rather than a standard plan-selection action like 'Get Started'."
+            },
+            {
+              "heuristic": "Error prevention",
+              "score": 4,
+              "note": "Cards distinctly outline inclusions to prevent tier confusion before checkout."
+            },
+            {
+              "heuristic": "Recognition rather than recall",
+              "score": 4,
+              "note": "Key differences in features across plans are explicitly listed with checkmarks side-by-side."
+            },
+            {
+              "heuristic": "Flexibility and efficiency of use",
+              "score": 3,
+              "note": "Lacks an expandable feature comparison table for deep technical evaluation."
+            },
+            {
+              "heuristic": "Aesthetic and minimalist design",
+              "score": 4,
+              "note": "Balanced visual hierarchy highlighting the popular Pro tier with lilac framing."
+            },
+            {
+              "heuristic": "Help users recognize, diagnose and recover from errors",
+              "score": 4,
+              "note": "Static pricing overview screen without input error states."
+            },
+            {
+              "heuristic": "Help and documentation",
+              "score": 3,
+              "note": "Teams plan offers 'Contact us', but plan FAQs and refund policies are missing."
+            }
+          ]
+        },
+        {
+          "screenRef": "C",
+          "heuristics": [
+            {
+              "heuristic": "Visibility of system status",
+              "score": 3,
+              "note": "Clear modal title and progress context, though lacking password strength or validity indicators."
+            },
+            {
+              "heuristic": "Match between system and the real world",
+              "score": 4,
+              "note": "Standard authentication conventions followed for registration and social sign-on."
+            },
+            {
+              "heuristic": "User control and freedom",
+              "score": 4,
+              "note": "Prominent top-right '✕' dismiss button allows effortless cancellation of the dialog."
+            },
+            {
+              "heuristic": "Consistency and standards",
+              "score": 2,
+              "note": "Primary action button is ambiguously labeled 'Submit', and inputs lack persistent top labels."
+            },
+            {
+              "heuristic": "Error prevention",
+              "score": 2,
+              "note": "No visible password requirement criteria prior to submission increases failure rates."
+            },
+            {
+              "heuristic": "Recognition rather than recall",
+              "score": 2,
+              "note": "Form uses placeholder text inside the input fields that disappears upon typing."
+            },
+            {
+              "heuristic": "Flexibility and efficiency of use",
+              "score": 4,
+              "note": "Offers fast social login alternatives below the primary form."
+            },
+            {
+              "heuristic": "Aesthetic and minimalist design",
+              "score": 3,
+              "note": "Faint text contrast on placeholder text and legal agreement disclaimer compromises legibility."
+            },
+            {
+              "heuristic": "Help users recognize, diagnose and recover from errors",
+              "score": 3,
+              "note": "No inline hints or recovery messaging demonstrated for invalid field entries."
+            },
+            {
+              "heuristic": "Help and documentation",
+              "score": 3,
+              "note": "Links to Terms and Privacy Policy are provided, but password guidance is absent."
+            }
+          ]
+        }
+      ],
+      "issues": [
+        {
+          "id": "ux-1",
+          "screenRef": "A",
+          "box": [
+            536,
+            154,
+            420,
+            333
+          ],
+          "principle": "Recognition rather than recall",
+          "severity": "major",
+          "evidence": "The 'Your learning path' card displays generic placeholder skeleton bars with no tangible course names, modules, or actual skill steps.",
+          "recommendation": "Replace abstract placeholder bars with a concrete preview of a popular career path (e.g., 'GenAI Fundamentals', 'Prompt Engineering') with estimated times and milestones.",
+          "effort": "S",
+          "citations": [
+            "screen-A#1",
+            "screen-A#2",
+            "empty-states"
+          ]
+        },
+        {
+          "id": "ux-2",
+          "screenRef": "B",
+          "box": [
+            103,
+            595,
+            225,
+            51
+          ],
+          "principle": "Consistency and standards",
+          "severity": "major",
+          "evidence": "The CTA button for the Starter plan is labeled 'Submit', which is a generic form submission label rather than an intent-driven action.",
+          "recommendation": "Relabel the button to 'Start for free' or 'Get Started' to match the intent and provide visual parity with the Pro tier.",
+          "effort": "S",
+          "citations": [
+            "screen-B#1",
+            "forms"
+          ]
+        },
+        {
+          "id": "ux-3",
+          "screenRef": "B",
+          "box": [
+            444,
+            248,
+            112,
+            17
+          ],
+          "principle": "Visibility of system status",
+          "severity": "major",
+          "evidence": "Billing duration 'Monthly · Yearly (save 20%)' is presented as static centered text without an interactive toggle switch or clear indicator showing which period is active.",
+          "recommendation": "Implement an interactive segmented pill control or toggle switch showing active/inactive states with dynamic pricing updates.",
+          "effort": "M",
+          "citations": [
+            "screen-B#1"
+          ]
+        },
+        {
+          "id": "ux-4",
+          "screenRef": "C",
+          "box": [
+            57,
+            190,
+            886,
+            200
+          ],
+          "principle": "Recognition rather than recall",
+          "severity": "major",
+          "evidence": "Field labels ('Full name', 'Email', 'Password') only exist as low-contrast placeholder text inside input boxes, disappearing once the user begins typing.",
+          "recommendation": "Place permanent field labels above each input box and retain helpful placeholder examples inside.",
+          "effort": "S",
+          "citations": [
+            "screen-C#1",
+            "forms"
+          ]
+        },
+        {
+          "id": "ux-5",
+          "screenRef": "C",
+          "box": [
+            56,
+            454,
+            887,
+            61
+          ],
+          "principle": "Consistency and standards",
+          "severity": "minor",
+          "evidence": "The primary registration button is labeled 'Submit', failing to state the outcome of the action.",
+          "recommendation": "Change the button text to an outcome-focused action such as 'Create Account'.",
+          "effort": "S",
+          "citations": [
+            "screen-C#1",
+            "forms"
+          ]
+        },
+        {
+          "id": "ux-6",
+          "screenRef": "C",
+          "box": [
+            589,
+            586,
+            111,
+            52
+          ],
+          "principle": "Match between system and the real world",
+          "severity": "minor",
+          "evidence": "The third SSO option uses an ambiguous command symbol ('⌘') rather than a recognized identity provider logo like Apple or GitHub.",
+          "recommendation": "Replace the command glyph with an official, standardized brand icon (such as GitHub or Apple) with appropriate accessible text.",
+          "effort": "S",
+          "citations": [
+            "screen-C#2"
+          ]
+        }
+      ]
+    },
+    "visual": {
+      "screens": [
+        {
+          "screenRef": "A",
+          "layout": "Two-column desktop hero section with text on the left and preview card on the right, followed by a four-column horizontal metric strip.",
+          "spacing": "Generous vertical breathing room with approximately 64px section padding, 20px gaps between metric cards, and 16px internal card padding.",
+          "palette": [
+            {
+              "hex": "#5046E5",
+              "role": "primary brand and accent"
+            },
+            {
+              "hex": "#1E2330",
+              "role": "primary display text"
+            },
+            {
+              "hex": "#6B7280",
+              "role": "secondary body copy"
+            },
+            {
+              "hex": "#EBF0FE",
+              "role": "hero subtle gradient background"
+            },
+            {
+              "hex": "#FFFFFF",
+              "role": "surface card background"
+            }
+          ],
+          "typography": "Clean geometric sans-serif; large bold display title with soft-purple inline emphasis, medium subheadings, and bold metric numerals.",
+          "hierarchy": "Main headline and primary 'Get Started' button lead the view, supported by the large learning path card on the right and prominent stat values beneath.",
+          "components": [
+            "Navigation bar",
+            "Hero headline and body copy",
+            "Primary button",
+            "Text link",
+            "Skeleton preview card",
+            "Stat cards (4x)",
+            "Trust line"
+          ]
+        },
+        {
+          "screenRef": "B",
+          "layout": "Centered page header and toggle followed by a symmetrical 3-column pricing card layout.",
+          "spacing": "32px below header, 24px between pricing cards, and 24px internal card padding.",
+          "palette": [
+            {
+              "hex": "#5046E5",
+              "role": "accent, Pro border, and primary button"
+            },
+            {
+              "hex": "#1E2330",
+              "role": "headings and plan titles"
+            },
+            {
+              "hex": "#FDE8E8",
+              "role": "Popular badge background"
+            },
+            {
+              "hex": "#F3F4F6",
+              "role": "inactive plan button background"
+            },
+            {
+              "hex": "#FFFFFF",
+              "role": "card and canvas background"
+            }
+          ],
+          "typography": "High-contrast sans-serif; bold centered page title, large numeric pricing tiers ($0, $29, $99), and standard body weight for feature checklists.",
+          "hierarchy": "Pro tier card visually commands attention using a solid purple border and filled CTA button, flanked by lower-contrast Starter and Teams tiers.",
+          "components": [
+            "Top navigation bar",
+            "Centered title & subhead",
+            "Billing frequency toggle",
+            "Pricing tier cards (3x)",
+            "Badge pill",
+            "Feature list with checkmarks",
+            "Call to action buttons"
+          ]
+        },
+        {
+          "screenRef": "C",
+          "layout": "Centered vertical modal container with single-column form inputs and stacked action areas.",
+          "spacing": "20px modal interior padding, 16px vertical gap between form fields, and 24px margin above CTA button.",
+          "palette": [
+            {
+              "hex": "#5046E5",
+              "role": "primary brand and primary CTA button"
+            },
+            {
+              "hex": "#1E2330",
+              "role": "title text"
+            },
+            {
+              "hex": "#9CA3AF",
+              "role": "input borders, placeholder text, and secondary copy"
+            },
+            {
+              "hex": "#FFFFFF",
+              "role": "modal surface"
+            }
+          ],
+          "typography": "Bold sans-serif modal header (~28px) paired with subtle regular subhead and placeholder input text.",
+          "hierarchy": "Header directly guides into the linear input sequence, leading down to the solid purple primary button and secondary SSO circle actions.",
+          "components": [
+            "Modal header with logo and close icon",
+            "Title and subhead",
+            "Text input fields (3x)",
+            "Terms checkbox",
+            "Full-width primary button",
+            "Labeled divider",
+            "Social SSO buttons (3x)",
+            "Secondary login link"
+          ]
+        }
+      ],
+      "craft": {
+        "distinctiveness": {
+          "score": 2,
+          "note": "Relies on ubiquitous SaaS conventions: soft pastel gradient background, generic rounded cards, skeleton wireframes, and standard 3-tier pricing without visual identity specific to AI upskilling."
+        },
+        "typography": {
+          "score": 2,
+          "note": "Uses standard neutral sans-serif with an inline color highlight on 'AI skills' that is a common template tell. Scale is functional but lacks expressive typographic hierarchy."
+        },
+        "colorSystem": {
+          "score": 3,
+          "note": "Cohesive lavender/purple primary palette with clean white surfaces, but suffers from low-contrast edge cases in body copy, placeholder text, and trust indicators."
+        },
+        "structure": {
+          "score": 3,
+          "note": "Clear functional hierarchy and standard groupings across hero, pricing comparison, and modal flow, though layouts remain strictly conventional."
+        },
+        "restraint": {
+          "score": 2,
+          "note": "Lacks a dedicated signature element; the hero placeholder skeleton wireframe fills space without communicating the concrete capabilities of the AI tutor or curriculum."
+        },
+        "uxWriting": {
+          "score": 2,
+          "note": "Repeated use of generic 'Submit' labels for selecting free plan tiers and creating user accounts violates clear outcome-driven action naming."
+        },
+        "templatedLook": "none",
+        "signatureElement": "none"
+      },
+      "issues": [
+        {
+          "id": "vis-1",
+          "screenRef": "B",
+          "box": [
+            103,
+            596,
+            225,
+            48
+          ],
+          "principle": "craft-writing-labels",
+          "severity": "major",
+          "evidence": "The CTA button for the Starter plan tier ($0/month) is labeled 'Submit', which is generic and does not inform the user what selecting the tier does.",
+          "recommendation": "Change the button text to an explicit action such as 'Get Started for Free' or 'Select Starter'.",
+          "effort": "S",
+          "citations": [
+            "screen-B#1",
+            "craft-writing-labels"
+          ]
+        },
+        {
+          "id": "vis-2",
+          "screenRef": "C",
+          "box": [
+            56,
+            454,
+            888,
+            60
+          ],
+          "principle": "craft-writing-labels",
+          "severity": "major",
+          "evidence": "The primary call to action button on the account creation form reads 'Submit' rather than declaring the actual outcome.",
+          "recommendation": "Rename the button to 'Create account' to match the screen's primary purpose and user expectation.",
+          "effort": "S",
+          "citations": [
+            "screen-C#1",
+            "craft-writing-labels",
+            "forms"
+          ]
+        },
+        {
+          "id": "vis-3",
+          "screenRef": "C",
+          "box": [
+            56,
+            191,
+            888,
+            200
+          ],
+          "principle": "forms",
+          "severity": "major",
+          "evidence": "Form inputs for Full name, Email, and Password rely solely on inside placeholder text with no persistent labels positioned above the fields.",
+          "recommendation": "Add permanent text labels above each input field so context is preserved once the user begins typing.",
+          "effort": "S",
+          "citations": [
+            "screen-C#1",
+            "forms"
+          ]
+        },
+        {
+          "id": "vis-4",
+          "screenRef": "A",
+          "box": [
+            536,
+            154,
+            422,
+            335
+          ],
+          "principle": "craft-hero",
+          "severity": "minor",
+          "evidence": "The hero section's primary visual anchor is a card with abstract skeleton bars under 'Your learning path' rather than authentic product UI, syllabus previews, or AI tutor interactions.",
+          "recommendation": "Replace the generic skeleton bars with a concrete preview card showing an actual AI learning path or a conversational snippet with the AI tutor.",
+          "effort": "M",
+          "citations": [
+            "screen-A#1",
+            "screen-A#2",
+            "craft-hero",
+            "craft-subject"
+          ]
+        },
+        {
+          "id": "vis-5",
+          "screenRef": "A",
+          "box": [
+            178,
+            168,
+            142,
+            48
+          ],
+          "principle": "craft-typography",
+          "severity": "minor",
+          "evidence": "The words 'AI skills' within the primary H1 headline are tinted purple against the dark gray text, relying on an overused SaaS template convention.",
+          "recommendation": "Render the headline in a unified dark neutral tone, relying on size, weight, and surrounding whitespace for emphasis.",
+          "effort": "S",
+          "citations": [
+            "screen-A#1",
+            "craft-typography"
+          ]
+        },
+        {
+          "id": "vis-6",
+          "screenRef": "A",
+          "box": [
+            44,
+            741,
+            201,
+            17
+          ],
+          "principle": "craft-quality-floor",
+          "severity": "minor",
+          "evidence": "'Trusted by teams at leading companies worldwide' uses faint gray type that fails WCAG AA 4.5:1 contrast requirements against the white background.",
+          "recommendation": "Darken the caption text color to at least #6B7280 to ensure legible readability.",
+          "effort": "S",
+          "citations": [
+            "screen-A#2",
+            "craft-quality-floor"
+          ]
+        }
+      ]
+    },
+    "market": {
+      "competitors": [
+        {
+          "rank": 1,
+          "name": "DataCamp",
+          "website": "https://www.datacamp.com",
+          "positioning": "Interactive, hands-on data and AI upskilling platform engineered to help individuals and enterprise teams transition into in-demand AI, ML, and data roles.",
+          "keyFeatures": [
+            "Role-Based Career Tracks",
+            "Embedded AI Tutor & Assistant",
+            "Zero-Setup Interactive In-Browser Learning",
+            "Skill Assessments (Signal)"
+          ],
+          "pricing": "Basic/Free chapter access; Premium Individual ~$14-$25/mo billed annually (up to $43 monthly); Teams ~$14-$25/user/mo billed annually; Enterprise custom pricing",
+          "uiPatterns": [
+            "Split-Screen In-Browser IDE",
+            "Docked AI Assistant Drawer",
+            "3-Tier Pricing Card Grid"
+          ],
+          "strengths": [
+            "Market leader in interactive, setup-free learning",
+            "Accredited industry certifications",
+            "Deep enterprise adoption"
+          ],
+          "weaknesses": [
+            "Historically anchored in data science and SQL/Python",
+            "Exercises can feel like fill-in-the-blank code rather than open-ended problem solving"
+          ],
+          "sources": [
+            "https://www.datacamp.com",
+            "https://www.datacamp.com/tracks/career",
+            "https://www.datacamp.com/blog/datacamp-vs-codecademy",
+            "https://www.datacamp.com/business/ai-upskilling",
+            "https://www.datacamp.com/promo"
+          ]
+        },
+        {
+          "rank": 2,
+          "name": "Codecademy",
+          "website": "https://www.codecademy.com",
+          "positioning": "Self-paced, hands-on technical learning platform aimed at career switchers and professionals mastering coding, web development, and AI engineering.",
+          "keyFeatures": [
+            "AI Career Paths",
+            "AI Learning Assistant",
+            "AI Builder prompt-to-app generator",
+            "Job-Readiness Checker & Interview Simulator"
+          ],
+          "pricing": "Basic Free tier; Plus $14.99/mo (annual) or $29.99/mo (monthly); Pro $19.99/mo (annual) or $39.99/mo (monthly); Teams ~$24.92/user/mo (annual)",
+          "uiPatterns": [
+            "3-Pane Studio Layout",
+            "Modal Registration Flow",
+            "Tier Comparison Grid"
+          ],
+          "strengths": [
+            "Strong developer brand recognition",
+            "Innovative AI features (AI Builder, Interview Simulator)",
+            "Engaging interactive feedback loop"
+          ],
+          "weaknesses": [
+            "Advanced career features and unlimited AI support are locked behind Pro",
+            "Limited coverage of non-technical executive AI literacy"
+          ],
+          "sources": [
+            "https://try.codecademy.com/pro-demo",
+            "https://help.codecademy.com/hc/en-us/articles/23400751016859-AI-Features-available-on-Codecademy",
+            "https://help.codecademy.com/hc/en-us/articles/44437136852123-AI-Builder-FAQ",
+            "https://www.codecademy.com/pages/paid-plans",
+            "https://www.codecademy.com/pricing",
+            "https://www.datacamp.com/blog/datacamp-vs-codecademy"
+          ]
+        }
+      ],
+      "trends": [
+        {
+          "trend": "Shift from Generic AI Literacy to Role-Grounded Specialization",
+          "detail": "Broad introduction courses are being replaced by hyper-specific tracks focused on immediate workplace applicability for professionals.",
+          "source": "https://www.datacamp.com/business/ai-upskilling"
+        },
+        {
+          "trend": "Shift from Answer Machines to Socratic AI Mentorship",
+          "detail": "AI tutors are evolving from raw answer generators into Socratic mentors providing step-by-step guidance, misconceptions analysis, and progressive hints.",
+          "source": "https://help.codecademy.com/hc/en-us/articles/23400751016859-AI-Features-available-on-Codecademy"
+        },
+        {
+          "trend": "Outcome and Job-Readiness Verification",
+          "detail": "Platforms prioritize tangible proof of competency such as mock AI interview simulators, role-readiness scores, and benchmark assessments over basic completion badges.",
+          "source": "https://www.codecademy.com/pages/paid-plans"
+        },
+        {
+          "trend": "Self-Serve B2C to B2B Team Upskilling Pipelines",
+          "detail": "Platforms offer standardized self-serve team tiers for mid-level managers with seat management and basic reporting.",
+          "source": "https://www.datacamp.com/promo"
+        }
+      ],
+      "featureGap": [
+        {
+          "feature": "Bite-Sized AI Courses",
+          "ours": "yes",
+          "competitors": [
+            {
+              "name": "DataCamp",
+              "has": "yes"
+            },
+            {
+              "name": "Codecademy",
+              "has": "yes"
+            }
+          ]
+        },
+        {
+          "feature": "Structured Career Paths",
+          "ours": "yes",
+          "competitors": [
+            {
+              "name": "DataCamp",
+              "has": "yes"
+            },
+            {
+              "name": "Codecademy",
+              "has": "yes"
+            }
+          ]
+        },
+        {
+          "feature": "Adaptive AI Tutor",
+          "ours": "yes",
+          "competitors": [
+            {
+              "name": "DataCamp",
+              "has": "yes"
+            },
+            {
+              "name": "Codecademy",
+              "has": "yes"
+            }
+          ]
+        },
+        {
+          "feature": "3-Tier Pricing Model (Starter, Pro, Teams)",
+          "ours": "yes",
+          "competitors": [
+            {
+              "name": "DataCamp",
+              "has": "yes"
+            },
+            {
+              "name": "Codecademy",
+              "has": "yes"
+            }
+          ]
+        },
+        {
+          "feature": "Modal Registration Flow",
+          "ours": "yes",
+          "competitors": [
+            {
+              "name": "DataCamp",
+              "has": "no"
+            },
+            {
+              "name": "Codecademy",
+              "has": "yes"
+            }
+          ]
+        },
+        {
+          "feature": "AI Interview Simulator / Job-Readiness Checker",
+          "ours": "no",
+          "competitors": [
+            {
+              "name": "DataCamp",
+              "has": "no"
+            },
+            {
+              "name": "Codecademy",
+              "has": "yes"
+            }
+          ]
+        },
+        {
+          "feature": "Adaptive Pre-Assessments (Signal)",
+          "ours": "unknown",
+          "competitors": [
+            {
+              "name": "DataCamp",
+              "has": "yes"
+            },
+            {
+              "name": "Codecademy",
+              "has": "no"
+            }
+          ]
+        }
+      ],
+      "opportunities": [
+        "Offer accessible AI mentorship on entry tiers instead of paywalling all AI capabilities behind high-priced Pro subscriptions.",
+        "Develop role-grounded AI transition tracks for non-coding and managerial professionals underserved by purely code-heavy platforms.",
+        "Incorporate practical job-readiness checks and portfolio-building artifacts directly into bite-sized micro-lessons."
+      ],
+      "note": "Fewer than 3 credible competitors were found with valid sources; Coursera was excluded because it had no cited URLs in the provided reference list.",
+      "trace": {
+        "searches": 4,
+        "citedUrls": [
+          {
+            "url": "https://www.myaiskilltutor.com/",
+            "title": "AI Upskilling for Working Professionals | My AI Skill Tutor"
+          },
+          {
+            "url": "https://conforai.com/",
+            "title": "ConforAI | AI upskilling for the corporate workforce (EU AI Act ready)"
+          },
+          {
+            "url": "https://www.datacamp.com/business/ai-upskilling",
+            "title": ""
+          },
+          {
+            "url": "https://amroacademy.com/",
+            "title": "AI Training for Businesses | Amro Academy"
+          },
+          {
+            "url": "https://aveluate.com/ai-upskilling",
+            "title": "Worried About AI? Prove You're Irreplaceable | Aveluate AI"
+          },
+          {
+            "url": "https://www.codecademy.com/pricing",
+            "title": "Pricing | Codecademy"
+          },
+          {
+            "url": "https://help.codecademy.com/hc/en-us/articles/23400751016859-AI-Features-available-on-Codecademy",
+            "title": "AI Features available on Codecademy – Codecademy Help Center"
+          },
+          {
+            "url": "https://www.codecademy.com/pages/paid-plans",
+            "title": "Paid Plans | Codecademy"
+          },
+          {
+            "url": "https://try.codecademy.com/pro-demo",
+            "title": "Codecademy Pro"
+          },
+          {
+            "url": "https://help.codecademy.com/hc/en-us/articles/44437136852123-AI-Builder-FAQ",
+            "title": "AI Builder FAQ – Codecademy Help Center"
+          },
+          {
+            "url": "https://www.datacamp.com/promo",
+            "title": ""
+          },
+          {
+            "url": "https://www.datacamp.com/tracks/career",
+            "title": "Career-building data science learning paths | DataCamp"
+          },
+          {
+            "url": "https://www.datacamp.com/pricing/student",
+            "title": ""
+          },
+          {
+            "url": "https://www.datacamp.com/",
+            "title": "DataCamp: Learn Data Science and AI Online"
+          },
+          {
+            "url": "https://www.datacamp.com/blog/datacamp-vs-codecademy",
+            "title": ""
+          }
+        ]
+      }
+    },
+    "lead": {
+      "summary": "Fernway Learn presents a clean, modern aesthetic for its technical AI upskilling platform, featuring an organized landing page hero, clear pricing grid, and focused registration modal. However, the experience is severely hampered by widespread critical accessibility failures, including unreadable low-contrast hero copy (2.41:1), primary CTA text (1.95:1), and input placeholders (1.80:1). Usability is further compromised by generic 'Submit' action labels across free plan selection and account creation, floating inputs lacking persistent top labels, and a non-functional static billing frequency toggle. Addressing these foundational accessibility and UX defects will dramatically improve onboarding conversion and visual credibility against benchmarks like DataCamp and Codecademy.",
+      "fixes": [
+        {
+          "rank": 1,
+          "priority": "P0",
+          "action": "Increase color contrast of the hero CTA button 'Get Started' to at least 4.5:1",
+          "why": "The primary hero button text measures a critically low contrast of 1.95:1 (#f5ffff on #a5b4fd), making the core conversion entry point almost invisible to users with moderate visual impairments.",
+          "impact": "high",
+          "effort": "S",
+          "owner": "dev",
+          "screenRef": "A",
+          "box": [
+            45,
+            433,
+            93,
+            52
+          ],
+          "foundBy": [
+            "a11y",
+            "visual"
+          ],
+          "drawsOn": "Codecademy",
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "rank": 2,
+          "priority": "P0",
+          "action": "Add persistent text labels above input fields and boost border/text contrast in the sign-up modal",
+          "why": "Inputs rely entirely on placeholder text measuring 1.80:1 to 1.82:1 with faint borders; placeholders disappear upon keystroke, degrading user memory, while screen readers and low-vision users lose form context.",
+          "impact": "high",
+          "effort": "S",
+          "owner": "design",
+          "screenRef": "C",
+          "box": [
+            56,
+            191,
+            888,
+            200
+          ],
+          "foundBy": [
+            "visual",
+            "ux",
+            "a11y"
+          ],
+          "drawsOn": "Codecademy",
+          "citations": [
+            "screen-C#1",
+            "forms",
+            "wcag-labels",
+            "wcag-non-text-contrast",
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "rank": 3,
+          "priority": "P0",
+          "action": "Increase hero body copy contrast from 2.41:1 to meet WCAG AA 4.5:1",
+          "why": "The value proposition copy '#9b9ead' against the lavender gradient '#f3f2fd' fails WCAG SC 1.4.3, significantly impairing readability for prospective learners.",
+          "impact": "high",
+          "effort": "S",
+          "owner": "dev",
+          "screenRef": "A",
+          "box": [
+            45,
+            311,
+            336,
+            83
+          ],
+          "foundBy": [
+            "a11y"
+          ],
+          "drawsOn": null,
+          "citations": [
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "rank": 4,
+          "priority": "P0",
+          "action": "Fix contrast and relabel the Starter plan button on the pricing screen",
+          "why": "The button is ambiguously labeled 'Submit' and has a failing contrast ratio of 2.43:1 (#9f9ea2 on #f3f4f6). Changing it to 'Start for free' with dark text (#6f6e71 or darker) clarifies action intent and restores compliance.",
+          "impact": "high",
+          "effort": "S",
+          "owner": "design",
+          "screenRef": "B",
+          "box": [
+            103,
+            596,
+            225,
+            48
+          ],
+          "foundBy": [
+            "visual",
+            "ux",
+            "a11y"
+          ],
+          "drawsOn": "DataCamp",
+          "citations": [
+            "screen-B#1",
+            "craft-writing-labels",
+            "forms",
+            "wcag-contrast-text"
+          ]
+        },
+        {
+          "rank": 5,
+          "priority": "P1",
+          "action": "Relabel the modal primary action from 'Submit' to 'Create account'",
+          "why": "'Submit' is a generic system technicality that fails to communicate the user outcome, violating usability and microcopy standards.",
+          "impact": "med",
+          "effort": "S",
+          "owner": "design",
+          "screenRef": "C",
+          "box": [
+            56,
+            454,
+            888,
+            60
+          ],
+          "foundBy": [
+            "visual",
+            "ux"
+          ],
+          "drawsOn": "Codecademy",
+          "citations": [
+            "screen-C#1",
+            "craft-writing-labels",
+            "forms"
+          ]
+        },
+        {
+          "rank": 6,
+          "priority": "P1",
+          "action": "Implement an interactive billing duration toggle switch for Monthly vs. Yearly pricing",
+          "why": "The text 'Monthly · Yearly (save 20%)' is displayed as static unsegmented text with no visual indication of which pricing mode is active, preventing users from exploring annual savings.",
+          "impact": "high",
+          "effort": "M",
+          "owner": "dev",
+          "screenRef": "B",
+          "box": [
+            444,
+            248,
+            112,
+            17
+          ],
+          "foundBy": [
+            "ux"
+          ],
+          "drawsOn": "DataCamp",
+          "citations": [
+            "screen-B#1"
+          ]
+        },
+        {
+          "rank": 7,
+          "priority": "P1",
+          "action": "Replace hero skeleton placeholder card with authentic AI learning path content",
+          "why": "The card visually anchors the hero with generic skeleton bars, failing to demonstrate the tangible product value, curriculum topics, or AI tutor capabilities.",
+          "impact": "med",
+          "effort": "M",
+          "owner": "design",
+          "screenRef": "A",
+          "box": [
+            536,
+            154,
+            422,
+            335
+          ],
+          "foundBy": [
+            "visual",
+            "ux"
+          ],
+          "drawsOn": "Brilliant.org",
+          "citations": [
+            "screen-A#1",
+            "screen-A#2",
+            "craft-hero",
+            "craft-subject",
+            "empty-states"
+          ]
+        },
+        {
+          "rank": 8,
+          "priority": "P1",
+          "action": "Increase touch target size and accessible label for modal close icon",
+          "why": "The modal close button measures only 11×14 CSS px (violating WCAG 2.5.8 target size minimum of 24×24 CSS px) and measures 2.67:1 contrast without an explicit screen-reader label.",
+          "impact": "med",
+          "effort": "S",
+          "owner": "dev",
+          "screenRef": "C",
+          "box": [
+            909,
+            34,
+            27,
+            16
+          ],
+          "foundBy": [
+            "a11y"
+          ],
+          "drawsOn": null,
+          "citations": [
+            "wcag-non-text-contrast",
+            "wcag-target-size",
+            "wcag-labels",
+            "screen-C#1"
+          ]
+        },
+        {
+          "rank": 9,
+          "priority": "P1",
+          "action": "Fix contrast and enlarge click target for 'Log in' secondary link",
+          "why": "The modal login link has a critically low contrast ratio of 2.12:1 (#a9b0d0 on #fdfdfe) and a height of only 14 CSS px, causing friction for returning learners attempting to authenticate.",
+          "impact": "med",
+          "effort": "S",
+          "owner": "dev",
+          "screenRef": "C",
+          "box": [
+            647,
+            676,
+            90,
+            17
+          ],
+          "foundBy": [
+            "a11y"
+          ],
+          "drawsOn": null,
+          "citations": [
+            "wcag-contrast-text",
+            "wcag-target-size"
+          ]
+        },
+        {
+          "rank": 10,
+          "priority": "P1",
+          "action": "Enlarge checkbox touch target and increase contrast on terms agreement",
+          "why": "The sign-up checkbox measures only 14×14 CSS px and registers 1.52:1 contrast against the modal canvas, creating input frustration and failing WCAG SC 2.5.8 and 1.4.3.",
+          "impact": "med",
+          "effort": "S",
+          "owner": "dev",
+          "screenRef": "C",
+          "box": [
+            57,
+            409,
+            35,
+            17
+          ],
+          "foundBy": [
+            "a11y"
+          ],
+          "drawsOn": null,
+          "citations": [
+            "wcag-contrast-text",
+            "wcag-target-size"
+          ]
+        },
+        {
+          "rank": 11,
+          "priority": "P2",
+          "action": "Replace ambiguous command glyph ('⌘') SSO icon with a recognizable provider logo",
+          "why": "The third SSO provider button uses a keyboard command symbol instead of a standard third-party identity provider logo like Apple or GitHub, confusing prospective users.",
+          "impact": "low",
+          "effort": "S",
+          "owner": "design",
+          "screenRef": "C",
+          "box": [
+            589,
+            586,
+            111,
+            52
+          ],
+          "foundBy": [
+            "ux"
+          ],
+          "drawsOn": "Coursera",
+          "citations": [
+            "screen-C#2"
+          ]
+        },
+        {
+          "rank": 12,
+          "priority": "P2",
+          "action": "Adjust top navigation links to meet WCAG AA contrast (4.5:1) and target size (24px)",
+          "why": "Links ('Courses' 4.25:1, 'Paths' 4.44:1, 'Pricing' 3.87:1, 'Blog' 3.90:1) fail the 4.5:1 text contrast threshold and possess vertical touch heights of only ~13 CSS px.",
+          "impact": "med",
+          "effort": "S",
+          "owner": "dev",
+          "screenRef": "A",
+          "box": [
+            435,
+            33,
+            38,
+            14
+          ],
+          "foundBy": [
+            "a11y"
+          ],
+          "drawsOn": null,
+          "citations": [
+            "wcag-contrast-text",
+            "wcag-target-size"
+          ]
+        },
+        {
+          "rank": 13,
+          "priority": "P2",
+          "action": "Darken the social proof line 'Trusted by teams at leading companies worldwide'",
+          "why": "The trust banner text uses faint gray typography below WCAG AA thresholds, diminishing the intended credibility boost for enterprise buyers.",
+          "impact": "low",
+          "effort": "S",
+          "owner": "design",
+          "screenRef": "A",
+          "box": [
+            44,
+            741,
+            201,
+            17
+          ],
+          "foundBy": [
+            "visual"
+          ],
+          "drawsOn": "Pluralsight Skills",
+          "citations": [
+            "screen-A#2",
+            "craft-quality-floor"
+          ]
+        },
+        {
+          "rank": 14,
+          "priority": "P2",
+          "action": "Adjust 'Learn more' link contrast and tap target padding in hero",
+          "why": "'Learn more' link contrast measures 4.08:1 against the gradient background and has a target height of only 15 CSS px, falling short of target size standards.",
+          "impact": "low",
+          "effort": "S",
+          "owner": "dev",
+          "screenRef": "A",
+          "box": [
+            160,
+            451,
+            53,
+            17
+          ],
+          "foundBy": [
+            "a11y"
+          ],
+          "drawsOn": null,
+          "citations": [
+            "wcag-contrast-text",
+            "wcag-target-size"
+          ]
+        },
+        {
+          "rank": 15,
+          "priority": "P2",
+          "action": "Normalize headline typography color for 'AI skills'",
+          "why": "Highlighting 'AI skills' with an isolated purple hue is an overused template styling pattern; using uniform typography weight and scale improves visual craftsmanship.",
+          "impact": "low",
+          "effort": "S",
+          "owner": "design",
+          "screenRef": "A",
+          "box": [
+            178,
+            168,
+            142,
+            48
+          ],
+          "foundBy": [
+            "visual"
+          ],
+          "drawsOn": null,
+          "citations": [
+            "screen-A#1",
+            "craft-typography"
+          ]
+        }
+      ],
+      "scores": [
+        {
+          "screenRef": "A",
+          "visual": 76,
+          "usability": 74,
+          "accessibility": 58,
+          "marketFit": 78,
+          "overall": 71
+        },
+        {
+          "screenRef": "B",
+          "visual": 78,
+          "usability": 68,
+          "accessibility": 72,
+          "marketFit": 82,
+          "overall": 75
+        },
+        {
+          "screenRef": "C",
+          "visual": 70,
+          "usability": 62,
+          "accessibility": 48,
+          "marketFit": 74,
+          "overall": 63
+        }
+      ],
+      "quickWins": [
+        "Change the modal CTA button text from 'Submit' to 'Create account'",
+        "Update the Starter tier button label on Screen B from 'Submit' to 'Start for free'",
+        "Darken the hero CTA button background or text to exceed 4.5:1 contrast",
+        "Add aria-label='Close' and 24px padding around the modal dismiss icon",
+        "Replace the ambiguous '⌘' SSO symbol with an official GitHub or Apple provider icon"
+      ],
+      "gaps": null
+    }
+  },
+  "retrieved": {
+    "visual": [
+      {
+        "id": "screen-A#1",
+        "title": "Screen A description",
+        "text": "Desktop landing page hero section and social proof metrics for Fernway Learn. At the top, the navigation bar shows the purple 'Fernway Learn' brand logo, navigation links for 'Courses', 'Paths', 'Pricing', and 'Blog', alongside subtle right-aligned utility icon placeholders. The hero area uses a pale periwinkle gradient backdrop and a two-column layout. The left column presents the large bold headline 'Master AI skills that get you hired', featuring 'AI skills' highlighted in periwinkle font, followed by descriptive copy: 'Bite-sized courses, hands-on projects and an AI tutor that adapts to you. Join thousands of learners building real careers.' Underneath is a solid periwinkle CTA button labeled 'Get Started' beside a text link 'Learn more'. The right column displays an elevated, rounded ",
+        "score": 145.99
+      },
+      {
+        "id": "screen-B#1",
+        "title": "Screen B description",
+        "text": "Desktop pricing tier comparison page set against a plain white background. Centered text at the top reads 'Simple, transparent pricing' above the subhead 'Choose the plan that's right for you.' and a billing toggle reading 'Monthly · Yearly (save 20%)'. Below, three distinct plan cards are arranged horizontally. The 'Starter' tier card displays '$0/month', listing checkmarked features '5 intro courses', 'Community forum', and 'Certificates', paired with a light gray button labeled 'Submit'. The center 'Pro' tier card is highlighted with a violet border and a soft pink badge reading 'Popular'; it displays '$29/month' with features 'All 120+ courses', 'AI tutor', 'Projects with feedback', and 'Certificates', completed by a prominent purple button reading 'Get Started'. The rightmost 'Teams' ",
+        "score": 142.73
+      },
+      {
+        "id": "screen-C#1",
+        "title": "Screen C description",
+        "text": "A clean, vertical account creation modal dialog displayed against a minimalist white background. The modal header features the brand name 'Fernway' in bold purple on the left and a gray close '✕' icon in the top right corner. The title block contains a bold primary header 'Create your account' supported by the subtitle 'Start learning in minutes.' Three rounded, outlined input fields follow in vertical succession with placeholder text: 'Full name', 'Email', and 'Password'. Below the inputs, an unchecked compliance box is paired with 'I agree to the Terms and Privacy Policy'. A full-width, solid purple button labeled 'Submit' provides the main call to action. Beneath this, a subtle divider with the text 'or continue with' sits above three circular single sign-on buttons labeled 'G' for Goog",
+        "score": 142.2
+      },
+      {
+        "id": "screen-A#2",
+        "title": "Screen A description",
+        "text": "beled 'Get Started' beside a text link 'Learn more'. The right column displays an elevated, rounded card titled 'Your learning path' showing horizontal placeholder skeleton lines representing module progression. Positioned directly below the hero are four white stat cards highlighting '120+ Courses', '50k Learners', '4.8 Average rating', and '92% Completion', underlined by the credit line 'Trusted by teams at leading companies worldwide'.",
+        "score": 120.15
+      },
+      {
+        "id": "screen-B#2",
+        "title": "Screen B description",
+        "text": "'Certificates', completed by a prominent purple button reading 'Get Started'. The rightmost 'Teams' tier card shows '$99/month' listing 'Everything in Pro', '10 seats', 'Admin dashboard', and 'SSO', alongside an outlined button labeled 'Contact us'. The screen utilizes clean modern typography with violet accents on the recommended option.",
+        "score": 100.43
+      },
+      {
+        "id": "screen-C#2",
+        "title": "Screen C description",
+        "text": "th the text 'or continue with' sits above three circular single sign-on buttons labeled 'G' for Google, 'in' for LinkedIn, and a command icon. At the bottom, secondary text prompts 'Already have an account? Log in'.",
+        "score": 65.9
+      },
+      {
+        "id": "hierarchy",
+        "title": "Visual hierarchy",
+        "text": "Size, weight, colour, contrast and position tell users what to look at first. One primary action per view should be visually dominant; secondary actions recede. Competing accents dilute focus.",
+        "score": 18.22
+      },
+      {
+        "id": "forms",
+        "title": "Form design",
+        "text": "Use single-column forms with labels above fields, group related fields, mark optional rather than required fields where most are required, use input types that match the data, and keep the primary button label specific to the outcome.",
+        "score": 18.01
+      }
+    ],
+    "ux": [
+      {
+        "id": "screen-A#1",
+        "title": "Screen A description",
+        "text": "Desktop landing page hero section and social proof metrics for Fernway Learn. At the top, the navigation bar shows the purple 'Fernway Learn' brand logo, navigation links for 'Courses', 'Paths', 'Pricing', and 'Blog', alongside subtle right-aligned utility icon placeholders. The hero area uses a pale periwinkle gradient backdrop and a two-column layout. The left column presents the large bold headline 'Master AI skills that get you hired', featuring 'AI skills' highlighted in periwinkle font, followed by descriptive copy: 'Bite-sized courses, hands-on projects and an AI tutor that adapts to you. Join thousands of learners building real careers.' Underneath is a solid periwinkle CTA button labeled 'Get Started' beside a text link 'Learn more'. The right column displays an elevated, rounded ",
+        "score": 145.99
+      },
+      {
+        "id": "screen-B#1",
+        "title": "Screen B description",
+        "text": "Desktop pricing tier comparison page set against a plain white background. Centered text at the top reads 'Simple, transparent pricing' above the subhead 'Choose the plan that's right for you.' and a billing toggle reading 'Monthly · Yearly (save 20%)'. Below, three distinct plan cards are arranged horizontally. The 'Starter' tier card displays '$0/month', listing checkmarked features '5 intro courses', 'Community forum', and 'Certificates', paired with a light gray button labeled 'Submit'. The center 'Pro' tier card is highlighted with a violet border and a soft pink badge reading 'Popular'; it displays '$29/month' with features 'All 120+ courses', 'AI tutor', 'Projects with feedback', and 'Certificates', completed by a prominent purple button reading 'Get Started'. The rightmost 'Teams' ",
+        "score": 142.73
+      },
+      {
+        "id": "screen-C#1",
+        "title": "Screen C description",
+        "text": "A clean, vertical account creation modal dialog displayed against a minimalist white background. The modal header features the brand name 'Fernway' in bold purple on the left and a gray close '✕' icon in the top right corner. The title block contains a bold primary header 'Create your account' supported by the subtitle 'Start learning in minutes.' Three rounded, outlined input fields follow in vertical succession with placeholder text: 'Full name', 'Email', and 'Password'. Below the inputs, an unchecked compliance box is paired with 'I agree to the Terms and Privacy Policy'. A full-width, solid purple button labeled 'Submit' provides the main call to action. Beneath this, a subtle divider with the text 'or continue with' sits above three circular single sign-on buttons labeled 'G' for Goog",
+        "score": 142.2
+      },
+      {
+        "id": "screen-A#2",
+        "title": "Screen A description",
+        "text": "beled 'Get Started' beside a text link 'Learn more'. The right column displays an elevated, rounded card titled 'Your learning path' showing horizontal placeholder skeleton lines representing module progression. Positioned directly below the hero are four white stat cards highlighting '120+ Courses', '50k Learners', '4.8 Average rating', and '92% Completion', underlined by the credit line 'Trusted by teams at leading companies worldwide'.",
+        "score": 120.15
+      },
+      {
+        "id": "screen-B#2",
+        "title": "Screen B description",
+        "text": "'Certificates', completed by a prominent purple button reading 'Get Started'. The rightmost 'Teams' tier card shows '$99/month' listing 'Everything in Pro', '10 seats', 'Admin dashboard', and 'SSO', alongside an outlined button labeled 'Contact us'. The screen utilizes clean modern typography with violet accents on the recommended option.",
+        "score": 100.43
+      },
+      {
+        "id": "screen-C#2",
+        "title": "Screen C description",
+        "text": "th the text 'or continue with' sits above three circular single sign-on buttons labeled 'G' for Google, 'in' for LinkedIn, and a command icon. At the bottom, secondary text prompts 'Already have an account? Log in'.",
+        "score": 65.9
+      },
+      {
+        "id": "forms",
+        "title": "Form design",
+        "text": "Use single-column forms with labels above fields, group related fields, mark optional rather than required fields where most are required, use input types that match the data, and keep the primary button label specific to the outcome.",
+        "score": 21.51
+      },
+      {
+        "id": "empty-states",
+        "title": "Empty states",
+        "text": "An empty screen is an invitation to act: explain what will appear here and give one clear action to get started, rather than a blank area or a vague message.",
+        "score": 18.56
+      }
+    ],
+    "a11y": [
+      {
+        "id": "screen-A#1",
+        "title": "Screen A description",
+        "text": "Desktop landing page hero section and social proof metrics for Fernway Learn. At the top, the navigation bar shows the purple 'Fernway Learn' brand logo, navigation links for 'Courses', 'Paths', 'Pricing', and 'Blog', alongside subtle right-aligned utility icon placeholders. The hero area uses a pale periwinkle gradient backdrop and a two-column layout. The left column presents the large bold headline 'Master AI skills that get you hired', featuring 'AI skills' highlighted in periwinkle font, followed by descriptive copy: 'Bite-sized courses, hands-on projects and an AI tutor that adapts to you. Join thousands of learners building real careers.' Underneath is a solid periwinkle CTA button labeled 'Get Started' beside a text link 'Learn more'. The right column displays an elevated, rounded ",
+        "score": 145.99
+      },
+      {
+        "id": "screen-B#1",
+        "title": "Screen B description",
+        "text": "Desktop pricing tier comparison page set against a plain white background. Centered text at the top reads 'Simple, transparent pricing' above the subhead 'Choose the plan that's right for you.' and a billing toggle reading 'Monthly · Yearly (save 20%)'. Below, three distinct plan cards are arranged horizontally. The 'Starter' tier card displays '$0/month', listing checkmarked features '5 intro courses', 'Community forum', and 'Certificates', paired with a light gray button labeled 'Submit'. The center 'Pro' tier card is highlighted with a violet border and a soft pink badge reading 'Popular'; it displays '$29/month' with features 'All 120+ courses', 'AI tutor', 'Projects with feedback', and 'Certificates', completed by a prominent purple button reading 'Get Started'. The rightmost 'Teams' ",
+        "score": 142.73
+      },
+      {
+        "id": "screen-C#1",
+        "title": "Screen C description",
+        "text": "A clean, vertical account creation modal dialog displayed against a minimalist white background. The modal header features the brand name 'Fernway' in bold purple on the left and a gray close '✕' icon in the top right corner. The title block contains a bold primary header 'Create your account' supported by the subtitle 'Start learning in minutes.' Three rounded, outlined input fields follow in vertical succession with placeholder text: 'Full name', 'Email', and 'Password'. Below the inputs, an unchecked compliance box is paired with 'I agree to the Terms and Privacy Policy'. A full-width, solid purple button labeled 'Submit' provides the main call to action. Beneath this, a subtle divider with the text 'or continue with' sits above three circular single sign-on buttons labeled 'G' for Goog",
+        "score": 142.2
+      },
+      {
+        "id": "screen-A#2",
+        "title": "Screen A description",
+        "text": "beled 'Get Started' beside a text link 'Learn more'. The right column displays an elevated, rounded card titled 'Your learning path' showing horizontal placeholder skeleton lines representing module progression. Positioned directly below the hero are four white stat cards highlighting '120+ Courses', '50k Learners', '4.8 Average rating', and '92% Completion', underlined by the credit line 'Trusted by teams at leading companies worldwide'.",
+        "score": 120.15
+      },
+      {
+        "id": "screen-B#2",
+        "title": "Screen B description",
+        "text": "'Certificates', completed by a prominent purple button reading 'Get Started'. The rightmost 'Teams' tier card shows '$99/month' listing 'Everything in Pro', '10 seats', 'Admin dashboard', and 'SSO', alongside an outlined button labeled 'Contact us'. The screen utilizes clean modern typography with violet accents on the recommended option.",
+        "score": 100.43
+      },
+      {
+        "id": "screen-C#2",
+        "title": "Screen C description",
+        "text": "th the text 'or continue with' sits above three circular single sign-on buttons labeled 'G' for Google, 'in' for LinkedIn, and a command icon. At the bottom, secondary text prompts 'Already have an account? Log in'.",
+        "score": 65.9
+      },
+      {
+        "id": "wcag-non-text-contrast",
+        "title": "WCAG 2.2 SC 1.4.11 Non-text Contrast",
+        "text": "Visual information needed to identify user interface components and states, such as icon buttons, input borders, focus indicators and chart elements, needs at least 3:1 contrast against adjacent colours.",
+        "score": 21.22
+      },
+      {
+        "id": "wcag-labels",
+        "title": "WCAG 2.2 SC 1.3.1, 2.5.3 and 4.1.2 Labels and names",
+        "text": "Inputs need visible labels that stay visible while typing; placeholders are not labels. Icon-only buttons need an accessible name. The visible label text should be part of the accessible name.",
+        "score": 20.53
+      }
+    ]
+  }
+}
