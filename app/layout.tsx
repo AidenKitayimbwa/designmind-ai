@@ -15,7 +15,9 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${atkinson.variable} ${bricolage.variable}`}>
+    // suppressHydrationWarning: browser extensions (e.g. LanguageTool) add attributes to <html> before React loads.
+    // It only silences attribute differences on this element, not in the rest of the page.
+    <html lang="en" className={`${atkinson.variable} ${bricolage.variable}`} suppressHydrationWarning>
       <body className="min-h-screen">
         <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-3 focus:text-white">
           Skip to content
