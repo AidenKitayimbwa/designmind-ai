@@ -79,6 +79,11 @@ export default function KeyOptions(p: Props) {
           </div>
           <p role="status" className="mt-2 text-sm">
             {test?.valid && <span className="text-pass">Key works{test.label && !/^sk-\w+-/.test(test.label) ? ` (${test.label})` : ""}. {test.limit_remaining != null ? `Credit remaining: $${Number(test.limit_remaining).toFixed(2)}.` : "No credit limit set."}</span>}
+            {test?.valid && test.limit_remaining != null && Number(test.limit_remaining) < 1 && (
+              <span className="mt-1 block text-warn">
+                This key&apos;s own spending limit is almost used up, so reviews may fail even if your OpenRouter account has credit. Raise or remove the limit at openrouter.ai/settings/keys.
+              </span>
+            )}
             {test && !test.valid && <span className="text-fail">{test.error ?? "This key didn't work."}</span>}
           </p>
         </div>

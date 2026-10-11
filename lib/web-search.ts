@@ -28,6 +28,7 @@ export async function webSearch(opts: {
       // Exa returns real page URLs. Gemini's native search engine returns temporary redirect links instead.
       tools: [{ type: "openrouter:web_search", parameters: { engine: "exa", max_results: 5, max_total_results: 15 } }],
       max_tool_calls: 5,
+      max_tokens: 8_000, // keeps OpenRouter's up-front credit check small; research notes are well under this
     }),
     signal: AbortSignal.timeout(opts.timeoutMs ?? 70_000),
   });
@@ -39,7 +40,7 @@ export async function webSearch(opts: {
 
   if (!res.ok) {
     const detail = await res.text().catch(() => "");
-    throw messageForStatus(res.status, opts.key.keySource, detail.slice(0, 500));
+    throw messageForStatus(res.status, opts.key.keySource, detail.slice(0, 2000));
   }
 
   const data = await res.json();

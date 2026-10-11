@@ -157,6 +157,9 @@ export const prompts: Record<StepId | "searchResearch" | "marketResearch", strin
 };
 
 // ---------- helpers ----------
+// Without a cap, OpenRouter reserves the model's full output budget (65k tokens) per call and refuses keys
+// that can't cover it. 12k leaves plenty of room for reasoning plus the structured answer.
+export const MAX_OUTPUT_TOKENS = 12_000;
 type ImageIn = { id: ScreenRef; src: string };
 
 function modelFor(key: ResolvedKey, model: string) {
@@ -187,6 +190,7 @@ async function structured<T extends z.ZodTypeAny>(key: ResolvedKey, model: strin
       messages: [message],
       output: Output.object({ schema }),
       maxRetries: 1,
+      maxOutputTokens: MAX_OUTPUT_TOKENS,
       abortSignal: AbortSignal.timeout(remaining),
     });
     return result.output as z.infer<T>;

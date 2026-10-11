@@ -40,9 +40,14 @@ export function messageForStatus(status: number, keySource: KeySource, detail = 
       : "The default key was rejected (401). Choose Bring your own key to continue.", "invalid_key");
   }
   if (status === 402) {
-    return new AppError(402, keySource === "user"
-      ? "Your OpenRouter key is out of credits (402). Add credits or switch to the default key."
-      : "The default key is out of credits. Choose Bring your own key to continue.", "no_credits");
+    // OpenRouter keys can carry their own spending limit, separate from the account balance.
+    const keyLimit = /openrouter_key_limit|key's total limit|usage limit/.test(d);
+    const which = keySource === "user" ? "Your OpenRouter key" : "The default key";
+    return new AppError(402, keyLimit
+      ? `${which} has reached its own credit limit on OpenRouter (402). Your account balance isn't the problem: raise or remove this key's limit at openrouter.ai/settings/keys, then click Retry.`
+      : keySource === "user"
+        ? "Your OpenRouter account is out of credits (402). Add credits at openrouter.ai/settings/credits or switch to the default key."
+        : "The default key is out of credits. Choose Bring your own key to continue.", keyLimit ? "key_limit" : "no_credits");
   }
   if (status === 429) return new AppError(429, "OpenRouter is rate limiting requests (429). Wait a few seconds, then click Retry.", "rate_limited");
   if (status === 413) return new AppError(413, "The screenshots are too large to send (413). Use smaller images.", "too_large");
