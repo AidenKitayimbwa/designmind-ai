@@ -1,5 +1,5 @@
 import { runAgent, type AgentBody } from "@/lib/agents";
-import { AppError, redact, resolveKey, toSafeError, type ResolvedKey } from "@/lib/keys";
+import { AppError, describeKey, keyFacts, redact, resolveKey, toSafeError, type ResolvedKey } from "@/lib/keys";
 import type { StepId } from "@/lib/steps";
 
 export const runtime = "nodejs";
@@ -21,6 +21,11 @@ export async function POST(req: Request, ctx: { params: Promise<{ agent: string 
     return Response.json({ output, keySource: resolved.keySource });
   } catch (err) {
     const safe = toSafeError(err, resolved);
+    // For credit errors, say which key failed and what its own limit is (last 3 characters only).
+    if ((safe.code === "key_limit" || safe.code === "no_credits") && resolved) {
+      const facts = await keyFacts(resolved.apiKey);
+      if (facts) safe.message = `${safe.message} ${describeKey(facts)}`;
+    }
     // Log only sanitized text: never the key or the request body.
     console.error(`[agents/${agent}] ${safe.code} (${safe.status}): ${redact(String((err as Error)?.message ?? err), resolved?.apiKey).slice(0, 300)}`);
     return Response.json({ error: safe.message, code: safe.code, keySource: resolved?.keySource }, { status: safe.status });

@@ -39,9 +39,10 @@ export function messageForStatus(status: number, keySource: KeySource, detail = 
       ? "Your OpenRouter key was rejected (401). Check it with Test key, or switch to the default key."
       : "The default key was rejected (401). Choose Bring your own key to continue.", "invalid_key");
   }
-  if (status === 402) {
-    // OpenRouter keys can carry their own spending limit, separate from the account balance.
-    const keyLimit = /openrouter_key_limit|key limit|key's total limit|usage limit/.test(d);
+  // OpenRouter keys can carry their own spending limit, separate from the account balance. It answers 402 while
+  // the key can't afford a request, and 403 "Key limit exceeded" once the limit is fully used.
+  const keyLimit = /openrouter_key_limit|key limit|key's total limit|usage limit/.test(d);
+  if (status === 402 || (status === 403 && keyLimit)) {
     const which = keySource === "user" ? "Your OpenRouter key" : "The default key";
     return new AppError(402, keyLimit
       ? `${which} has reached its own credit limit on OpenRouter (402). Your account balance isn't the problem: raise or remove this key's limit at openrouter.ai/settings/keys, then click Retry.`
@@ -77,4 +78,31 @@ export function toSafeError(err: unknown, resolved?: ResolvedKey): { status: num
   }
   if (e?.name === "AbortError" || e?.name === "TimeoutError") return { status: 504, message: "The request timed out. Click Retry.", code: "timeout" };
   return { status: 500, message: "Something went wrong while reaching OpenRouter. Check your connection and click Retry.", code: "network" };
+}
+
+// Ask OpenRouter about a key (never returns the key): its last 3 characters, owner type, limit and spend.
+// Used to explain credit errors, because a key can have its own cap separate from the account balance.
+export type KeyFacts = { ending: string; organization: boolean; limit: number | null; used: number; remaining: number | null };
+
+export async function keyFacts(apiKey: string): Promise<KeyFacts | null> {
+  try {
+    const res = await fetch("https://openrouter.ai/api/v1/key", { headers: { Authorization: `Bearer ${apiKey}` }, signal: AbortSignal.timeout(8_000) });
+    if (!res.ok) return null;
+    const { data } = await res.json();
+    return {
+      ending: apiKey.slice(-3),
+      organization: Boolean(data?.organization_id),
+      limit: typeof data?.limit === "number" ? data.limit : null,
+      used: Number(data?.usage ?? 0),
+      remaining: typeof data?.limit_remaining === "number" ? data.limit_remaining : null,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function describeKey(f: KeyFacts): string {
+  const owner = f.organization ? "an organisation key" : "a personal key";
+  const cap = f.limit === null ? "no spending limit" : `a $${f.limit.toFixed(2)} spending limit, $${f.used.toFixed(2)} used`;
+  return `Key ending ...${f.ending} is ${owner} with ${cap}.`;
 }
