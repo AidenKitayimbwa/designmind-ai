@@ -41,7 +41,7 @@ export function messageForStatus(status: number, keySource: KeySource, detail = 
   }
   if (status === 402) {
     // OpenRouter keys can carry their own spending limit, separate from the account balance.
-    const keyLimit = /openrouter_key_limit|key's total limit|usage limit/.test(d);
+    const keyLimit = /openrouter_key_limit|key limit|key's total limit|usage limit/.test(d);
     const which = keySource === "user" ? "Your OpenRouter key" : "The default key";
     return new AppError(402, keyLimit
       ? `${which} has reached its own credit limit on OpenRouter (402). Your account balance isn't the problem: raise or remove this key's limit at openrouter.ai/settings/keys, then click Retry.`
