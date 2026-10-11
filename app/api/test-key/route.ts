@@ -1,4 +1,4 @@
-import { describeKey, keyFacts, messageForStatus, toSafeError } from "@/lib/keys";
+import { describeKey, diagnose, keyFacts, messageForStatus, spendableNow, toSafeError } from "@/lib/keys";
 
 export const runtime = "nodejs";
 
@@ -15,8 +15,14 @@ export async function POST(req: Request) {
       const err = messageForStatus(res.status, "user");
       return Response.json({ valid: false, error: err.message }, { status: res.status === 401 ? 401 : err.status });
     }
-    const facts = await keyFacts(key);
-    return Response.json({ valid: true, limit_remaining: facts?.remaining ?? null, about: facts ? describeKey(facts) : null });
+    const [facts, spend] = await Promise.all([keyFacts(key), spendableNow(key)]);
+    return Response.json({
+      valid: true,
+      limit_remaining: facts?.binding?.remaining ?? null,
+      spendable_now: spend ? Math.round(spend.usd * 100) / 100 : null,
+      ready: spend ? !spend.capped : null,
+      about: [facts && describeKey(facts), diagnose(facts, spend)].filter(Boolean).join(" ") || null,
+    });
   } catch (err) {
     return Response.json({ valid: false, error: toSafeError(err).message }, { status: 502 });
   }

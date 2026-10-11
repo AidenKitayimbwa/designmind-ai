@@ -86,32 +86,88 @@ export function toSafeError(err: unknown, resolved?: ResolvedKey): { status: num
     return { status: mapped.status, message: mapped.message, code: mapped.code };
   }
   if (e?.name === "AbortError" || e?.name === "TimeoutError") return { status: 504, message: "The request timed out. Click Retry.", code: "timeout" };
-  return { status: 500, message: "Something went wrong while reaching OpenRouter. Check your connection and click Retry.", code: "network" };
+  const kind = typeof e?.name === "string" && e.name !== "Error" ? ` (${e.name})` : "";
+  return { status: 500, message: `Something went wrong while reaching OpenRouter${kind}. Check your connection and click Retry.`, code: "network" };
 }
 
-// Ask OpenRouter about a key (never returns the key): its last 3 characters, owner type, limit and spend.
-// Used to explain credit errors, because a key can have its own cap separate from the account balance.
-export type KeyFacts = { ending: string; organization: string | null; limit: number | null; used: number; remaining: number | null };
+// Ask OpenRouter about a key (never returns the key): its last 3 characters, owner, and every budget that
+// applies to it. A key can have its own limit, a weekly or monthly reset, and workspace guardrails, all
+// separate from the owner's credit balance, which pays for everything.
+export type Budget = { scope: string; limit: number; spent: number; remaining: number; resets: string | null };
+export type KeyFacts = { ending: string; organization: string | null; budgets: Budget[]; binding: Budget | null };
+
+function toBudget(b: Record<string, unknown> | null | undefined): Budget | null {
+  if (!b || typeof b.limit_usd !== "number") return null;
+  return {
+    scope: String(b.scope ?? "limit").replace(/_/g, " "),
+    limit: b.limit_usd,
+    spent: Number(b.spend_usd ?? 0),
+    remaining: Number(b.remaining_usd ?? (b.limit_usd as number) - Number(b.spend_usd ?? 0)),
+    resets: typeof b.reset_interval === "string" ? b.reset_interval : null,
+  };
+}
 
 export async function keyFacts(apiKey: string): Promise<KeyFacts | null> {
   try {
     const res = await fetch("https://openrouter.ai/api/v1/key", { headers: { Authorization: `Bearer ${apiKey}` }, signal: AbortSignal.timeout(8_000) });
     if (!res.ok) return null;
     const { data } = await res.json();
+    let budgets = (Array.isArray(data?.budgets) ? data.budgets : []).map(toBudget).filter(Boolean) as Budget[];
+    if (budgets.length === 0 && typeof data?.limit === "number") {
+      budgets = [{ scope: "key limit", limit: data.limit, spent: Number(data.usage ?? 0), remaining: Number(data.limit_remaining ?? 0), resets: data.limit_reset ?? null }];
+    }
     return {
       ending: apiKey.slice(-3),
       organization: typeof data?.organization_id === "string" ? data.organization_id : null,
-      limit: typeof data?.limit === "number" ? data.limit : null,
-      used: Number(data?.usage ?? 0),
-      remaining: typeof data?.limit_remaining === "number" ? data.limit_remaining : null,
+      budgets,
+      binding: toBudget(data?.effective_budget) ?? budgets.reduce<Budget | null>((m, b) => (!m || b.remaining < m.remaining ? b : m), null),
     };
   } catch {
     return null;
   }
 }
 
+const money = (n: number) => `$${n.toFixed(2)}`;
+
 export function describeKey(f: KeyFacts): string {
   const owner = f.organization ? `a key of organisation ${f.organization.slice(0, 12)}...` : "a personal key";
-  const cap = f.limit === null ? "no spending limit" : `a $${f.limit.toFixed(2)} spending limit, $${f.used.toFixed(2)} used`;
-  return `Key ending ...${f.ending} is ${owner} with ${cap}.`;
+  if (f.budgets.length === 0) return `Key ending ...${f.ending} is ${owner} with no spending limit.`;
+  const list = f.budgets.map((b) => `${b.scope}${b.resets ? ` (resets ${b.resets})` : ""}: ${money(b.spent)} of ${money(b.limit)} used`).join("; ");
+  return `Key ending ...${f.ending} is ${owner}. Budgets: ${list}.`;
+}
+
+// Measure what a key can actually spend right now. Asking for a huge answer makes OpenRouter either run a
+// tiny request (the key can spend plenty) or refuse with "can only afford N tokens", which reveals the
+// real ceiling: the smaller of the key's budgets and the owner's credit balance.
+const PROBE_MODEL = "google/gemini-3.8-flash";
+const PROBE_OUTPUT_PRICE = 3.75 / 1_000_000; // USD per output token for the probe model
+
+export async function spendableNow(apiKey: string): Promise<{ usd: number; capped: boolean } | null> {
+  try {
+    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: PROBE_MODEL, max_tokens: 65_536, messages: [{ role: "user", content: "Reply with OK." }] }),
+      signal: AbortSignal.timeout(20_000),
+    });
+    if (res.ok) return { usd: 65_536 * PROBE_OUTPUT_PRICE, capped: false };
+    const text = await res.text();
+    const n = text.match(/can only afford (\d+)/i);
+    if (n) return { usd: Number(n[1]) * PROBE_OUTPUT_PRICE, capped: true };
+    if (/limit exceeded|insufficient|out of credits|never purchased/i.test(text)) return { usd: 0, capped: true };
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+// Turn the two measurements into one sentence saying what is actually blocking the key.
+export function diagnose(f: KeyFacts | null, spend: { usd: number; capped: boolean } | null): string | null {
+  if (!spend) return null;
+  if (!spend.capped) return "It can spend enough for a full review right now.";
+  const allowedByBudgets = f?.binding ? f.binding.remaining : Infinity;
+  if (allowedByBudgets <= spend.usd + 0.05) {
+    return `It can only spend about ${money(Math.max(0, spend.usd))} right now because of its ${f?.binding?.scope ?? "limit"}${f?.binding?.resets ? ` (resets ${f.binding.resets})` : ""}. Raise that limit on OpenRouter.`;
+  }
+  return `Its budgets allow ${allowedByBudgets === Infinity ? "unlimited spending" : `${money(allowedByBudgets)} more`}, but OpenRouter will only let it spend about ${money(spend.usd)} right now. So the ${f?.organization ? "organisation" : "personal account"} that owns this key has only about ${money(spend.usd)} of credit. Add credit there, or create the key in the account or organisation that holds your credit.`;
 }
