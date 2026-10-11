@@ -44,11 +44,13 @@ export function messageForStatus(status: number, keySource: KeySource, detail = 
   const keyLimit = /openrouter_key_limit|key limit|key's total limit|usage limit/.test(d);
   if (status === 402 || (status === 403 && keyLimit)) {
     const which = keySource === "user" ? "Your OpenRouter key" : "The default key";
-    return new AppError(402, keyLimit
+    const said = upstreamMessage(detail);
+    const quote = said ? ` OpenRouter said: "${said}"` : "";
+    return new AppError(402, (keyLimit
       ? `${which} has reached its own credit limit on OpenRouter (402). Your account balance isn't the problem: raise or remove this key's limit at openrouter.ai/settings/keys, then click Retry.`
       : keySource === "user"
-        ? "Your OpenRouter account is out of credits (402). Add credits at openrouter.ai/settings/credits or switch to the default key."
-        : "The default key is out of credits. Choose Bring your own key to continue.", keyLimit ? "key_limit" : "no_credits");
+        ? "The OpenRouter account or organisation that owns your key is out of credits (402). A key spends its owner's balance, so create the key in the account or organisation that holds your credit, or add credits to this one."
+        : "The default key's account is out of credits. Add credits on OpenRouter or choose Bring your own key.") + quote, keyLimit ? "key_limit" : "no_credits");
   }
   if (status === 429) return new AppError(429, "OpenRouter is rate limiting requests (429). Wait a few seconds, then click Retry.", "rate_limited");
   if (status === 413) return new AppError(413, "The screenshots are too large to send (413). Use smaller images.", "too_large");
@@ -61,6 +63,13 @@ export function messageForStatus(status: number, keySource: KeySource, detail = 
   }
   if (status === 408 || status === 504) return new AppError(504, "The model took too long to answer. Click Retry.", "timeout");
   return new AppError(status >= 400 ? status : 502, `OpenRouter returned an error (${status}). Click Retry.`, "upstream");
+}
+
+// Pull OpenRouter's own error text out of a response body, without links or key IDs.
+function upstreamMessage(detail: string): string {
+  const m = detail.match(/"message"\s*:\s*"([^"]{1,400})"/);
+  const text = (m ? m[1] : detail).replace(/https?:\/\/\S+/g, "").replace(/\s+/g, " ").trim();
+  return text.slice(0, 220);
 }
 
 // Turn any thrown value into { status, message } with keys removed.
@@ -82,7 +91,7 @@ export function toSafeError(err: unknown, resolved?: ResolvedKey): { status: num
 
 // Ask OpenRouter about a key (never returns the key): its last 3 characters, owner type, limit and spend.
 // Used to explain credit errors, because a key can have its own cap separate from the account balance.
-export type KeyFacts = { ending: string; organization: boolean; limit: number | null; used: number; remaining: number | null };
+export type KeyFacts = { ending: string; organization: string | null; limit: number | null; used: number; remaining: number | null };
 
 export async function keyFacts(apiKey: string): Promise<KeyFacts | null> {
   try {
@@ -91,7 +100,7 @@ export async function keyFacts(apiKey: string): Promise<KeyFacts | null> {
     const { data } = await res.json();
     return {
       ending: apiKey.slice(-3),
-      organization: Boolean(data?.organization_id),
+      organization: typeof data?.organization_id === "string" ? data.organization_id : null,
       limit: typeof data?.limit === "number" ? data.limit : null,
       used: Number(data?.usage ?? 0),
       remaining: typeof data?.limit_remaining === "number" ? data.limit_remaining : null,
@@ -102,7 +111,7 @@ export async function keyFacts(apiKey: string): Promise<KeyFacts | null> {
 }
 
 export function describeKey(f: KeyFacts): string {
-  const owner = f.organization ? "an organisation key" : "a personal key";
+  const owner = f.organization ? `a key of organisation ${f.organization.slice(0, 12)}...` : "a personal key";
   const cap = f.limit === null ? "no spending limit" : `a $${f.limit.toFixed(2)} spending limit, $${f.used.toFixed(2)} used`;
   return `Key ending ...${f.ending} is ${owner} with ${cap}.`;
 }
