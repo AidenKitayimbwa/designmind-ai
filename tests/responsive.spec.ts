@@ -58,16 +58,14 @@ test("example review: every tab opens and pins appear", async ({ page }, info) =
   await pins.first().click();
   await expect(page.getByText(/^Fix 1 \(P[012]\):/)).toBeVisible();
 
-  const mobile = info.project.name === "mobile";
+  // On mobile the tabs sit in one row that scrolls sideways; clicking scrolls each one into view.
   for (const tab of TABS) {
-    if (mobile) await page.getByTestId("tab-select").selectOption(tab);
-    else await page.getByRole("tab", { name: tab, exact: true }).click();
+    await page.getByRole("tab", { name: tab, exact: true }).click();
     await expect(page.getByTestId(`panel-${tab}`)).toBeVisible();
     await expectNoHorizontalScroll(page);
   }
 
-  if (mobile) await page.getByTestId("tab-select").selectOption("Overview");
-  else await page.getByRole("tab", { name: "Overview", exact: true }).click();
+  await page.getByRole("tab", { name: "Overview", exact: true }).click();
   await expectNoHorizontalScroll(page);
   await page.screenshot({ path: `tests/screenshots/example-${info.project.name}.png`, fullPage: true });
 });

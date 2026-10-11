@@ -18,15 +18,16 @@ export default function Home() {
           <p className="mt-6 max-w-xl text-lg text-muted">
             Upload screens of your product. 6 AI reviewers check the visuals, usability, accessibility and market, then mark up your design with the fixes that matter most.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#start" className="flex min-h-12 items-center justify-center rounded-full bg-ink px-7 font-display text-lg font-bold text-paper hover:bg-navy">
+          {/* On phones the buttons stack at the width of the longer label, not the full screen width. */}
+          <div className="mt-8 grid w-fit gap-3 sm:flex sm:flex-wrap sm:items-center">
+            <a href="#start" className="inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-6 font-display text-base font-bold text-paper transition-transform hover:bg-navy active:scale-[0.97] sm:px-7 sm:text-lg">
               Start a review
             </a>
-            <Link href="/examples/example-compare" className="flex min-h-12 items-center justify-center rounded-full border-2 border-ink px-7 font-display text-lg font-bold text-ink hover:bg-surface">
+            <Link href="/examples/example-compare" className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-ink px-6 font-display text-base font-bold text-ink transition-transform hover:bg-surface active:scale-[0.97] sm:px-7 sm:text-lg">
               Quick Walk-through
             </Link>
           </div>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+          <ul className="mt-6 flex flex-col gap-2 text-sm text-muted sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-x-6">
             {FACTS.map((f) => (
               <li key={f} className="flex items-center gap-2">
                 <span className="size-2 rounded-full bg-pen-bright" aria-hidden="true" />
@@ -39,7 +40,7 @@ export default function Home() {
       </section>
 
       <section id="start" aria-labelledby="start-heading" className="scroll-mt-24">
-        <h2 id="start-heading" className="font-display text-3xl font-extrabold tracking-tight">Start a review</h2>
+        <h2 id="start-heading" className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">Start a review</h2>
         <p className="mt-2 text-muted">Add up to 3 screenshots. A full review takes about 2–3 minutes.</p>
         <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
           <UploadForm />
